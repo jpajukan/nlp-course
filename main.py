@@ -15,7 +15,9 @@ def main():
 
     #ngram_example2(args.inputword1)
 
-    ngram_example_5_gram()
+    #ngram_example_5_gram()
+
+    modded_cooccurence_function()
 
 if __name__ == '__main__':
     main()
