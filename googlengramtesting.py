@@ -2,6 +2,8 @@ from google_ngram_downloader import readline_google_store
 
 from google_ngram_downloader.__main__ import cooccurrence
 
+
+
 #from google_ngram_downloader.__main__ import *
 
 import google_ngram_downloader.__main__
@@ -13,10 +15,13 @@ import sys
 from collections import OrderedDict
 from itertools import islice
 
+
 from opster import Dispatcher
 from py.path import local
 
 from google_ngram_downloader.util import iter_google_store, readline_google_store, count_coccurrence
+
+from google_ngram_downloader.util import *
 
 """
 
@@ -88,7 +93,7 @@ def modded_cooccurence_function():
     output = 'downloads/google_ngrams/{ngram_len}_cooccurrence'
     verbose = True,
     rewrite = False
-    records_in_file = 5000000
+    records_in_file = 50000000
     lang = 'eng'
 
     indices = ["te"]
@@ -99,7 +104,8 @@ def modded_cooccurence_function():
     output_dir = local(output.format(ngram_len=ngram_len))
     output_dir.ensure_dir()
 
-    for fname, _, all_records in readline_google_store(ngram_len, lang=lang, verbose=verbose, indices=indices):
+    #for fname, _, all_records in readline_google_store(ngram_len, lang=lang, verbose=verbose, indices=indices):
+    for fname, _, all_records in readline_google_store_modded(ngram_len, lang=lang, verbose=verbose, indices=indices):
         print("hep1")
         postfix = 0
         while (True):
@@ -120,7 +126,8 @@ def modded_cooccurence_function():
             print("hep4")
             index = OrderedDict()
             print("hep5")
-            cooccurrence = count_coccurrence(records, index)
+            #cooccurrence = count_coccurrence(records, index)
+            cooccurrence = count_coccurrence_modded(records, index)
             print("hep6")
 
             if not cooccurrence:
@@ -129,7 +136,8 @@ def modded_cooccurence_function():
             id2word = list(index)
 
             # Do not output if word is not 'test'
-            items = (u'{}\t{}\t{}\n'.format(id2word[i], id2word[c], str(v)) for (i, c), v in cooccurrence.items() if id2word[i]=="test" or id2word[c]=="test")
+            #items = (u'{}\t{}\t{}\n'.format(id2word[i], id2word[c], str(v)) for (i, c), v in cooccurrence.items() if id2word[i]=="test" or id2word[c]=="test")
+            items = (u'{}\t{}\t{}\n'.format(id2word[i], id2word[c], str(v)) for (i, c), v in cooccurrence.items())
 
             with gzip.open(str(output_file), 'wb') as f:
                 if verbose:
@@ -138,3 +146,71 @@ def modded_cooccurence_function():
                     f.write(item.encode('utf8'))
 
             postfix += 1
+
+def count_coccurrence_modded(records, index):
+    print("hep7")
+    #filtering everything that is not test started
+    #filtered_records = filter(lambda r: r.ngram.startswith("test "), records)
+
+    #grouped_records = groupby(filtered_records, key=lambda r: r.ngram)
+    grouped_records = groupby(records, key=lambda r: r.ngram)
+
+    print("hep8")
+
+
+    ngram_counts = ((ngram, sum(r.match_count for r in records)) for ngram, records in grouped_records)
+    #ngram_counts = ((ngram, sum(r.match_count for r in records)) for ngram, records in grouped_records if ngram.startswith("test"))
+    #ngram_counts = ((ngram, sum(r.match_count for r in records)) for ngram, records in grouped_records)
+    print("hep9")
+    cooc = (ngram_to_cooc(ngram, count, index) for ngram, count in ngram_counts)
+    print("hep10")
+    counter = collections.Counter()
+    for item, count in chain.from_iterable(cooc):
+        #print(item)
+        counter[item] += count
+    print("hep11")
+    return counter
+
+def readline_google_store_modded(ngram_len, lang='eng', indices=None, chunk_size=1024 ** 2, verbose=False):
+    """Iterate over the data in the Google ngram collectioin.
+        :param int ngram_len: the length of ngrams to be streamed.
+        :param str lang: the langueage of the ngrams.
+        :param iter indices: the file indices to be downloaded.
+        :param int chunk_size: the size the chunks of raw compressed data.
+        :param bool verbose: if `True`, then the debug information is shown to `sys.stderr`.
+        :returns: a iterator over triples `(fname, url, records)`
+    """
+
+    for fname, url, request in iter_google_store(ngram_len, verbose=verbose, lang=lang, indices=indices):
+        dec = zlib.decompressobj(32 + zlib.MAX_WBITS)
+
+        def lines():
+            last = b''
+            compressed_chunks = request.iter_content(chunk_size=chunk_size)
+
+            for i, compressed_chunk in enumerate(compressed_chunks):
+                chunk = dec.decompress(compressed_chunk)
+
+                lines = (last + chunk).split(b'\n')
+                lines, last = lines[:-1], lines[-1]
+
+                for line in lines:
+                    line = line.decode('utf-8')
+                    data = line.split('\t')
+                    assert len(data) == 4
+                    ngram = data[0]
+                    #print(ngram)
+                    #remove everything that is not test
+                    if not ngram.startswith("test "):
+                        continue
+
+                    other = map(int, data[1:])
+                    yield Record(ngram, *other)
+
+            if last:
+                raise StreamInterruptionError(
+                    url,
+                    "Data stream ended on a non-empty line. This might be due "
+                    "to temporary networking problems.")
+
+        yield fname, url, lines()
