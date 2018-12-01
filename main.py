@@ -17,7 +17,15 @@ def main():
 
     #ngram_example_5_gram()
 
-    modded_cooccurence_function()
+    #modded_cooccurence_function()
+
+
+    # Testing wordnet stuff for contextual wording
+    result = wn.synsets("bank")
+    for ss in result:
+        print(build_contextual_wording(ss))
+        print("\n")
+
 
 if __name__ == '__main__':
     main()

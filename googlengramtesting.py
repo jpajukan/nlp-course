@@ -2,7 +2,8 @@ from google_ngram_downloader import readline_google_store
 
 from google_ngram_downloader.__main__ import cooccurrence
 
-
+import nltk
+from nltk.corpus import wordnet as wn
 
 #from google_ngram_downloader.__main__ import *
 
@@ -89,7 +90,8 @@ def ngram_example_5_gram():
 def modded_cooccurence_function():
     #idea is to be similar than original, but limit search to only 1 word
 
-    ngram_len = 2
+    #ngram_len = 2
+    ngram_len = 5
     output = 'downloads/google_ngrams/{ngram_len}_cooccurrence'
     verbose = True,
     rewrite = False
@@ -171,7 +173,8 @@ def count_coccurrence_modded(records, index):
     print("hep11")
     return counter
 
-def readline_google_store_modded(ngram_len, lang='eng', indices=None, chunk_size=1024 ** 2, verbose=False):
+#def readline_google_store_modded(ngram_len, lang='eng', indices=None, chunk_size=1024 ** 2, verbose=False):
+def readline_google_store_modded(ngram_len, lang='eng', indices=None, chunk_size=2048 ** 2, verbose=False):
     """Iterate over the data in the Google ngram collectioin.
         :param int ngram_len: the length of ngrams to be streamed.
         :param str lang: the langueage of the ngrams.
@@ -214,3 +217,52 @@ def readline_google_store_modded(ngram_len, lang='eng', indices=None, chunk_size
                     "to temporary networking problems.")
 
         yield fname, url, lines()
+
+
+def build_contextual_wording(word):
+    """
+
+    :param word: input synset of where contextual wording must be built
+    :return: array of contextual words as strings
+    """
+    lemma = word.lemma_names()
+
+    # Adding also hyponyms hypernyms meronyms and holonyms?
+
+    hypernyms = word.hypernyms()
+
+    hypernyms_lemmas = []
+
+    for hp in hypernyms:
+        hypernyms_lemmas.extend(hp.lemma_names())
+
+    hyponyms = word.hyponyms()
+
+    hyponyms_lemmas = []
+
+    for hyms in hyponyms:
+        hyponyms_lemmas.extend(hyms.lemma_names())
+
+    holonyms = word.member_holonyms()
+
+    holonyms_lemmas = []
+
+    for homs in holonyms:
+        holonyms_lemmas.extend(homs.lemma_names())
+
+    meronyms = word.part_meronyms()
+
+    meronyms_lemmas = []
+
+    for mems in meronyms:
+        meronyms_lemmas.extend(mems.lemma_names())
+
+    contextual_wording = []
+
+    contextual_wording.extend(lemma)
+    contextual_wording.extend(hypernyms_lemmas)
+    contextual_wording.extend(hyponyms_lemmas)
+    contextual_wording.extend(holonyms_lemmas)
+    contextual_wording.extend(meronyms_lemmas)
+
+    return contextual_wording
