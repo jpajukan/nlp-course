@@ -27,5 +27,15 @@ def main():
         print("\n")
 
 
+    # Test word stuff
+    sentence1 = "I like fishing at bank of the river"
+    sentence2 = "I loaned money from the bank of the America"
+
+    s1 = prepare_context_sentence(sentence1, "bank")
+    s2 = prepare_context_sentence(sentence2, "bank")
+
+    cw = build_contextual_wording(wn.synsets("bank")[0])
+    cooccurence_bank(s2)
+
 if __name__ == '__main__':
     main()

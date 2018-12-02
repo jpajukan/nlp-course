@@ -4,6 +4,8 @@ from google_ngram_downloader.__main__ import cooccurrence
 
 import nltk
 from nltk.corpus import wordnet as wn
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 
 #from google_ngram_downloader.__main__ import *
 
@@ -93,7 +95,7 @@ def modded_cooccurence_function():
     #ngram_len = 2
     ngram_len = 5
     output = 'downloads/google_ngrams/{ngram_len}_cooccurrence'
-    verbose = True,
+    verbose = True
     rewrite = False
     records_in_file = 50000000
     lang = 'eng'
@@ -266,3 +268,87 @@ def build_contextual_wording(word):
     contextual_wording.extend(meronyms_lemmas)
 
     return contextual_wording
+
+
+def cooccurence_bank(contextual_words):
+    # get 5 gram co-occurence matrix of bank and then do some calculations to sentences
+
+    # ngram_len = 2
+    ngram_len = 5
+    output = 'downloads/google_ngrams/{ngram_len}_cooccurrence'
+    verbose = True
+    rewrite = False
+    #records_in_file = 50000000
+    records_in_file = 5000000
+    lang = 'eng'
+
+    indices = ["ba"]
+
+    word = "bank"
+
+    """Write the cooccurrence frequencies of a word and its contexts."""
+    assert ngram_len > 1
+    output_dir = local(output.format(ngram_len=ngram_len))
+    output_dir.ensure_dir()
+
+    for fname, _, all_records in readline_google_store(ngram_len, lang=lang, verbose=verbose, indices=indices):
+    #for fname, _, all_records in readline_google_store_modded(ngram_len, lang=lang, verbose=verbose, indices=indices):
+        postfix = 0
+        while (True):
+            records = islice(all_records, records_in_file)
+            #output_file = output_dir.join(
+            #    '{fname}_{postfix}.gz'.format(
+            #        fname=fname,
+           #         postfix=postfix,
+            #    )
+            #)
+
+            #if not rewrite and output_file.check():
+            #    if verbose:
+            #        print('Skipping {} and the rest...'.format(output_file))
+            #    break
+            index = OrderedDict()
+            cooccurrence = count_coccurrence(records, index)
+            #cooccurrence = count_coccurrence_modded(records, index)
+
+            if not cooccurrence:
+                break
+
+            id2word = list(index)
+
+            # Do not output if word is not 'test'
+            # items = (u'{}\t{}\t{}\n'.format(id2word[i], id2word[c], str(v)) for (i, c), v in cooccurrence.items() if id2word[i]=="test" or id2word[c]=="test")
+            #items = (u'{}\t{}\t{}\n'.format(id2word[i], id2word[c], str(v)) for (i, c), v in cooccurrence.items())
+
+            #with gzip.open(str(output_file), 'wb') as f:
+            #    if verbose:
+            #        print('Writing {}'.format(output_file))
+            #    for item in items:
+            #        f.write(item.encode('utf8'))
+
+            #postfix += 1
+
+            # Print this rounds results
+            for (i, c), v in cooccurrence.items():
+                if id2word[i] == word:
+                    if id2word[c] in contextual_words:
+                        print("words " + id2word[i] + " " + id2word[c] + " " + "cooccurence amount: " +str(v))
+                elif id2word[c] == word:
+                    if id2word[i] in contextual_words:
+                        print("words " + id2word[i] + " " + id2word[c] + " " + "cooccurence amount: " +str(v))
+
+def prepare_context_sentence(sentence, word):
+
+    # removes stopwords and target word
+    stop_words = set(stopwords.words('english'))
+
+    word_tokens = word_tokenize(sentence)
+
+    filtered_sentence = []
+
+    for w in word_tokens:
+        if w not in stop_words and not (w == word):
+            filtered_sentence.append(w)
+
+    #print(filtered_sentence)
+    return filtered_sentence
