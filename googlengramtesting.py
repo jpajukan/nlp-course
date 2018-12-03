@@ -267,7 +267,14 @@ def build_contextual_wording(word):
     contextual_wording.extend(holonyms_lemmas)
     contextual_wording.extend(meronyms_lemmas)
 
-    return contextual_wording
+    end_result = []
+
+    for word in contextual_wording:
+        result = word.split("_")
+        end_result.extend(result)
+
+    end_result = set(end_result)
+    return end_result
 
 
 def cooccurence_bank(contextual_words):
@@ -352,3 +359,4 @@ def prepare_context_sentence(sentence, word):
 
     #print(filtered_sentence)
     return filtered_sentence
+
