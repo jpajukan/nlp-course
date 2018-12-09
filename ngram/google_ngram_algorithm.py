@@ -228,7 +228,12 @@ class GoogleNgramAlgorithm:
                     score += sense['query_results'][key].sum()
 
 
-            sense['score'] = score
+            # Lets divide score by all bigram count
+
+            if len(sense['query_bigrams']) == 0:
+                sense['score'] = 0
+            else:
+                sense['score'] = score / len(sense['query_bigrams'])
 
     def print_results(self):
         """

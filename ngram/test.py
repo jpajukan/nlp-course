@@ -12,10 +12,15 @@ def main():
     target_word = "bank"
 
 
-    # Algorithm seems to be working nicely with this one
+    # Algorithm seems to be working nicely with this one (but might just be coincidence)
     sentence = "We went to see the famous play at the theater"
     target_word = "play"
 
+    # Not producing good with this one
+    sentence = "Most successful football team play at the stadium tonight"
+    target_word = "play"
+
+    #ngra = GoogleNgramAlgorithm(target_word, sentence, 6, 2)
     ngra = GoogleNgramAlgorithm(target_word, sentence)
 
     ngra.prepare()
