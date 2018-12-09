@@ -4,8 +4,18 @@ def main():
 
     # Not very good test word stuff. Try different ones
 
+
     sentence = "I like to tie knots in rope"
     target_word = "tie"
+
+    sentence = "I loaned money from bank to buy new apartment"
+    target_word = "bank"
+
+
+    # Algorithm seems to be working nicely with this one
+    sentence = "We went to see the famous play at the theater"
+    target_word = "play"
+
     ngra = GoogleNgramAlgorithm(target_word, sentence)
 
     ngra.prepare()
