@@ -10,6 +10,8 @@ import pandas as pd
 import re
 import requests               # http://github.com/kennethreitz/requests
 
+from time import sleep
+
 # Muistettava mainita mistä otettu lainakoodit
 
 corpora = dict(eng_us_2012=17, eng_us_2009=5, eng_gb_2012=18, eng_gb_2009=6,
@@ -195,7 +197,7 @@ class GoogleNgramAlgorithm:
 
             for bigram_chunk in bigrams_chunked:
                 query = self.create_query_string(bigram_chunk)
-                print(query)
+                print("Querying with ngrams %s" % (query))
                 url, urlquery, df = self.getNgrams(query, corpus, startYear, endYear, smoothing, caseInsensitive)
                 sense['query_results'] = pd.concat([sense['query_results'], df])
 
@@ -236,10 +238,28 @@ class GoogleNgramAlgorithm:
 
         for sense in self.data:
             print(sense['synset'])
-            print(sense['sense_wording'])
+            print(sense['synset'].lemma_names())
             print(str(sense['score']))
             print("\n")
 
+    def get_all_data(self):
+        """
+        :return: Returns all data as huge chunk
+        """
+        return self.data
+
+    def get_all_results(self):
+        """
+        :return: Returns all interesting results (synset, synset lemma names and score) ordered by score
+        """
+        sorted_results = sorted(self.data, key=lambda x: x['score'], reverse=True)
+
+        result_tuples = []
+
+        for result in sorted_results:
+            result_tuples.append((result['synset'], result['synset'].lemma_names(), result['score']))
+
+        return result_tuples
 
     def getNgrams(self, query, corpus, startYear, endYear, smoothing, caseInsensitive):
         params = dict(content=query, year_start=startYear, year_end=endYear,
@@ -251,14 +271,29 @@ class GoogleNgramAlgorithm:
             params['content'] = params['content'].replace('?', '*')
         if '@' in params['content']:
             params['content'] = params['content'].replace('@', '=>')
-        req = requests.get('http://books.google.com/ngrams/graph', params=params)
-        print(req)
-        res = re.findall('var data = (.*?);\\n', req.text)
-        if res:
-            data = {qry['ngram']: qry['timeseries']
-                    for qry in literal_eval(res[0])}
-            df = DataFrame(data)
-            df.insert(0, 'year', list(range(startYear, endYear + 1)))
-        else:
-            df = DataFrame()
+
+        retry_wait_time = 0
+
+        # TODO: Program jams if there is no internet connection and 200 response is never received
+        while True:
+            req = requests.get('http://books.google.com/ngrams/graph', params=params)
+
+            if req.status_code == 200:
+                res = re.findall('var data = (.*?);\\n', req.text)
+                if res:
+                    data = {qry['ngram']: qry['timeseries']
+                            for qry in literal_eval(res[0])}
+                    df = DataFrame(data)
+                    df.insert(0, 'year', list(range(startYear, endYear + 1)))
+                else:
+                    df = DataFrame()
+
+                break
+
+            if req.status_code == 429:
+                # TODO: Rude way now, could this be improved by lookin for response retry-after header?
+                retry_wait_time += 10
+                print("Response 429 received, waiting %s seconds" % (retry_wait_time))
+                sleep(retry_wait_time)
+
         return req.url, params['content'], df

@@ -15,5 +15,7 @@ def main():
 
     ngra.print_results()
 
+    print(ngra.get_all_results())
+
 if __name__ == '__main__':
     main()
