@@ -81,23 +81,35 @@ class GoogleNgramAlgorithm:
         contextual_wording.extend(holonyms_lemmas)
         contextual_wording.extend(meronyms_lemmas)
 
+        print(contextual_wording)
         end_result = []
 
         for word in contextual_wording:
-            result = word.split("_")
-            end_result.extend(result)
+            if "_" in word:
+                result = word.split("_")
+                for w in result:
+                    if w not in end_result:
+                        end_result.append(w)
+            else:
+                if word not in end_result:
+                    end_result.append(word)
 
-        end_result = set(end_result)
 
+        end_result_filtered = []
+
+        # Remove if target word and stopwords from list
+        stop_words = set(stopwords.words('english'))
+
+        for word in end_result:
+            if word not in stop_words and word != self.target_word:
+                end_result_filtered.append(word)
+
+        #print(end_result_filtered)
         # Crudely just take fist of the list as context words
-        if len(end_result) > self.sense_wording_size:
-            return islice(end_result, self.sense_wording_size)
+        if len(end_result_filtered) > self.sense_wording_size:
+            return end_result_filtered[:self.sense_wording_size]
 
-        # Remove if target word is in list
-        if self.target_word in end_result:
-            end_result.remove(self.target_word)
-
-        return end_result
+        return end_result_filtered
 
 
     def create_target_context_wording(self):
@@ -162,8 +174,16 @@ class GoogleNgramAlgorithm:
             sense_wording = self.create_sense_wording(synset)
 
             # Create all bigrams
+
+            #print(synset)
+            #print(sense_wording)
+            #print(self.target_context_processed)
+
             bigrams = list(product(sense_wording, self.target_context_processed))
-            bigrams.extend(list(product(sense_wording, self.target_context_processed)))
+            bigrams.extend(list(product(self.target_context_processed, sense_wording)))
+
+            #print(bigrams)
+            #exit()
 
             # Remove duplicates
             bigrams = list(set(bigrams))
