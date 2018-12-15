@@ -282,7 +282,7 @@ class GoogleNgramAlgorithm:
         result_tuples = []
 
         for result in sorted_results:
-            result_tuples.append((result['synset'], result['synset'].lemma_names(), result['score']))
+            result_tuples.append((result['synset'], result['synset'].lemma_names(), result['synset'].definition(), result['score']))
 
         return result_tuples
 
