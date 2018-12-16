@@ -29,12 +29,13 @@ def chunks(l, n):
 
 
 class GoogleNgramAlgorithm:
-    def __init__(self, target_word, target_context, sense_wording_size=12, target_context_size=6):
+    def __init__(self, target_word, target_context, sense_wording_size=12, target_context_size=6, use_wildcards=False):
         """
         :param target_word: word to be disambiguated, for now we suggest that there is no duplicate target words
         :param targe_tcontext: context of target word as string
         :param sense_wording_size: number of words in sense which will be created for every synset
         :param target_context_size: number of words which will be taken from context wording
+        :param use_wildcards: if algorithm builds also wildcard trigrams during
         """
 
         self.target_word = target_word
@@ -42,6 +43,8 @@ class GoogleNgramAlgorithm:
         self.target_context_processed = []
         self.sense_wording_size = sense_wording_size
         self.target_context_size = target_context_size
+        self.use_wildcards = use_wildcards
+
 
     def create_sense_wording(self, synset):
         """
@@ -100,14 +103,22 @@ class GoogleNgramAlgorithm:
         # Remove if target word and stopwords from list
         stop_words = set(stopwords.words('english'))
 
+        #for word in end_result:
+        #    if word not in stop_words and word != self.target_word:
+        #        end_result_filtered.append(word)
+
+        # Leaving target word in words
         for word in end_result:
-            if word not in stop_words and word != self.target_word:
+            if word not in stop_words:
                 end_result_filtered.append(word)
 
         #print(end_result_filtered)
         # Crudely just take fist of the list as context words
         if len(end_result_filtered) > self.sense_wording_size:
             return end_result_filtered[:self.sense_wording_size]
+
+        print("Sense wording")
+        print(end_result_filtered)
 
         return end_result_filtered
 
@@ -205,7 +216,7 @@ class GoogleNgramAlgorithm:
         :return:
         """
 
-        corpus, startYear, endYear, smoothing = 'eng_2012', 1800, 2000, 1
+        corpus, startYear, endYear, smoothing = 'eng_2012', 1800, 2008, 1
         printHelp, caseInsensitive, allData = False, False, False
         toSave, toPrint, toPlot = True, True, False
 
@@ -221,13 +232,33 @@ class GoogleNgramAlgorithm:
                 url, urlquery, df = self.getNgrams(query, corpus, startYear, endYear, smoothing, caseInsensitive)
                 sense['query_results'] = pd.concat([sense['query_results'], df])
 
-    def create_query_string(self, bigrams):
-        query = bigrams[0][0] + " " + bigrams[0][1]
 
-        for bigram in bigrams[1:]:
-            query = query + "," + bigram[0] + " " + bigram[1]
+            if self.use_wildcards:
+                # Somehow new same chunks must be taken to make this work, idk why...
+                bigrams_chunked2 = chunks(sense['query_bigrams'], 12)
+                for bigram_chunk2 in bigrams_chunked2:
+                    query = self.create_query_string(bigram_chunk2, True)
+                    print("Querying with ngrams %s" % (query))
+                    url, urlquery, df = self.getNgrams(query, corpus, startYear, endYear, smoothing, caseInsensitive)
+                    sense['query_results'] = pd.concat([sense['query_results'], df])
 
-        return query
+    def create_query_string(self, bigrams, wildcard=False):
+
+        if wildcard == False:
+            query = bigrams[0][0] + " " + bigrams[0][1]
+
+            for bigram in bigrams[1:]:
+                query = query + "," + bigram[0] + " " + bigram[1]
+
+            return query
+
+        else:
+            query = bigrams[0][0] + " * " + bigrams[0][1]
+
+            for bigram in bigrams[1:]:
+                query = query + "," + bigram[0] + " * " + bigram[1]
+
+            return query
 
     def analyze(self):
         """
@@ -241,11 +272,23 @@ class GoogleNgramAlgorithm:
 
         for sense in self.data:
             score = 0
-            for bigram in sense['query_bigrams']:
-                key = bigram[0] + " " + bigram[1]
+            print(sense['query_results'])
 
-                if key in sense['query_results']:
-                    score += sense['query_results'][key].sum()
+            # Refining calculations
+            #stripped = sense['query_results'].loc[:, sense['query_results'].columns != 'year']
+
+            #score = stripped.sum()
+
+            #columns with * must be taken away also because they hold sum of wildcard query
+            for column in sense['query_results']:
+                if (column != 'year') and ('*' not in column):
+                    score += sense['query_results'][column].sum()
+
+            #for bigram in sense['query_bigrams']:
+            #    key = bigram[0] + " " + bigram[1]
+
+            #    if key in sense['query_results']:
+            #        score += sense['query_results'][key].sum()
 
 
             # Lets divide score by all bigram count
