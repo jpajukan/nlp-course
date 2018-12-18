@@ -19,7 +19,10 @@ def main():
 
     # Ei tunnista adjektiivia complex ollenkaan! Kun ei se saa luotua niille sense wordingiä. Vähän parempi tulos kun antaa target wordin olla sense wordeissa mukana
 
-    ngra = GoogleNgramAlgorithm(word, sentence, 6, 6, use_wildcards=True)
+    sentence = "Like all states New Hampshire has two senators in the US Senate. New Hampshire's current senators are Judd Gregg (R) and John E. Sununu (R) whose father John H. Sununu was governor of the state from 1983 ndash 1988"
+    word = "states"
+
+    ngra = GoogleNgramAlgorithm(word, sentence, 2, 2, use_wildcards=True)
 
     ngra.prepare()
     ngra.query_google_ngram()
