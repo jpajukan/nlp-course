@@ -378,7 +378,13 @@ class GoogleNgramAlgorithm:
 
         # TODO: Program jams if there is no internet connection and 200 response is never received
         while True:
-            req = requests.get('http://books.google.com/ngrams/graph', params=params)
+            try:
+                req = requests.get('http://books.google.com/ngrams/graph', params=params)
+            except Exception:
+                # Wait minute for connection to repair
+                print("Connection error, waiting 60 seconds")
+                sleep(60)
+                continue
 
             if req.status_code == 200:
                 res = re.findall('var data = (.*?);\\n', req.text)
@@ -392,10 +398,10 @@ class GoogleNgramAlgorithm:
 
                 break
 
-            if req.status_code == 429:
+            if req.status_code != 200:
                 # TODO: Rude way now, could this be improved by lookin for response retry-after header?
                 retry_wait_time += 10
-                print("Response 429 received, waiting %s seconds" % (retry_wait_time))
+                print("Response %s received, waiting %s seconds" % (req.status_code, retry_wait_time))
                 sleep(retry_wait_time)
 
         return req.url, params['content'], df
