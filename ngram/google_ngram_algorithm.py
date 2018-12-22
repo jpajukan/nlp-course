@@ -15,6 +15,8 @@ from time import sleep
 
 import math
 
+from cachehandler import *
+
 # Muistettava mainita mistä otettu lainakoodit
 
 corpora = dict(eng_us_2012=17, eng_us_2009=5, eng_gb_2012=18, eng_gb_2009=6,
@@ -238,6 +240,45 @@ class GoogleNgramAlgorithm:
 
             self.data.append(sense_data)
 
+    def get_query_bigrams_not_in_cache(self, bigrams, wildcard=False):
+
+        not_in_cache = []
+
+        for bg in bigrams:
+            result = None
+
+            if wildcard == False:
+                ngram = bg[0] + " " + bg[1]
+                result = get_cache(ngram)
+            else:
+                ngram = bg[0] + " * " + bg[1]
+                result = get_cache(ngram)
+
+            if result == None:
+                not_in_cache.append(bg)
+
+            if result != None:
+                print("Ngram %s foudn in cache, dropping it from query" % (ngram))
+
+        return not_in_cache
+
+    def get_bigram_data_existing_in_cache(self, bigrams, wildcard=False):
+        data = {}
+
+        for bg in bigrams:
+            ngram = bg[0] + " " + bg[1]
+            result = get_cache(ngram)
+            if result != None:
+                data[ngram] = result
+
+
+            if wildcard == True:
+                ngram = bg[0] + " * " + bg[1]
+                result = get_cache(ngram)
+                if result != None:
+                    data[ngram] = result
+        return data
+
 
     def query_google_ngram(self):
         """
@@ -250,10 +291,13 @@ class GoogleNgramAlgorithm:
         toSave, toPrint, toPlot = True, True, False
 
         for sense in self.data:
-
             # Make query always with 12 bigrams because it seems like max amount
 
-            bigrams_chunked = chunks(sense['query_bigrams'], 12)
+
+            bigrams_not_in_cache = self.get_query_bigrams_not_in_cache(sense['query_bigrams'])
+
+            #bigrams_chunked = chunks(sense['query_bigrams'], 12)
+            bigrams_chunked = chunks(bigrams_not_in_cache, 12)
 
             for bigram_chunk in bigrams_chunked:
                 query = self.create_query_string(bigram_chunk)
@@ -264,7 +308,11 @@ class GoogleNgramAlgorithm:
 
             if self.use_wildcards:
                 # Somehow new same chunks must be taken to make this work, idk why...
-                bigrams_chunked2 = chunks(sense['query_bigrams'], 12)
+                # get new cache bigrams
+                bigrams_not_in_cache2 = self.get_query_bigrams_not_in_cache(sense['query_bigrams'],wildcard=True)
+
+                #bigrams_chunked2 = chunks(sense['query_bigrams'], 12)
+                bigrams_chunked2 = chunks(bigrams_not_in_cache2, 12)
                 for bigram_chunk2 in bigrams_chunked2:
                     query = self.create_query_string(bigram_chunk2, True)
                     print("Querying with ngrams %s" % (query))
@@ -302,35 +350,93 @@ class GoogleNgramAlgorithm:
         for sense in self.data:
             # Score is actually occurence count
             score = 0
-            print(sense['query_results'])
+            ##print(sense['query_results'])
+
+            ##print(sense['query_results'].to_string())
+            #with pd.option_context('display.max_rows', None, 'display.max_columns', None):
+                #print(sense['query_results'])
+
+            #validien kolumnien määrä, otetaan käytäntö laskea yhdeksi kaikki tähtikolumnit?
+            #column_count = 0
+            column_scores = {}
 
 
-            column_count = 0
             for column in sense['query_results']:
-                if (column != 'year') and ('*' not in column):
-                    column_count += 1
+                #if (column != 'year') and ('*' not in column):
+                if (column != 'year'):
+                    #column_count += 1
+                    if '*' in column or (2 == len(column.split())):
+                        column_scores[column] = 0
+
+
+            print(column_scores.keys())
 
             # Loop over rows and count valid columns
+
             for index, row in sense['query_results'].iterrows():
-                for column in sense['query_results']:
-                    if (column != 'year') and ('*' not in column):
-                        add_score = float(row[column]) * 0.01 * float(self.total_word_counts[str(int(row['year']))])
+                #for column in sense['query_results']:
+                for column in column_scores.keys():
+                    #if (column != 'year') and ('*' not in column):
+                    add_score = float(row[column]) * 0.01 * float(self.total_word_counts[str(int(row['year']))])
 
-                        if math.isnan(add_score):
-                            continue
+                    print(str(int(row['year'])))
+                    if math.isnan(add_score):
+                        continue
 
-                        score += add_score
+                    #score += add_score
+                    column_scores[column] += add_score
 
 
-            sense['absolute_score'] = score
-            print(sense['absolute_score'])
+            #sense['absolute_score'] = score
 
             # Calculate number of columns go get actual number to divide
 
-            if column_count == 0:
+            # Taking data from cache
+            cache_data = {}
+
+
+            # voiko korjata käyttämään create query stringiä samaan tyyliin kuin alla?
+            if self.use_wildcards:
+                cache_data = self.get_bigram_data_existing_in_cache(sense['query_bigrams'],wildcard=True)
+            else:
+                cache_data = self.get_bigram_data_existing_in_cache(sense['query_bigrams'])
+
+            #print(cache_data)
+            # lisää lasketut kolumnit cacheen
+
+            for ngram, score in column_scores.items():
+                insert_cache(ngram, score)
+
+
+            # ota cachesta mukaan laskentaan kolumnit cachesta
+
+            for ngram, value in cache_data.items():
+                print("Ngram %s taken from cache" % (ngram))
+                column_scores[ngram] = value
+
+            # Merkataan kaikki tyhjäksi jääneet myös cacheen ja otetaan joka tapauksessa mukaan laskentaan
+            # Hyödynnetään ottamalla query string ja splitataan
+            empty_queries = []
+            all_queries = self.create_query_string(sense['query_bigrams']).split(",")
+            all_queries.extend(self.create_query_string(sense['query_bigrams'],True).split(","))
+
+            for q in all_queries:
+                if q in column_scores.keys():
+                    continue
+
+                empty_queries.append(q)
+                insert_cache(q, 0)
+
+            sum_score = 0
+            for ngram, score in column_scores.items():
+                sum_score += score
+
+            division_count = len(column_scores.keys()) + len(empty_queries)
+
+            if division_count == 0:
                 sense['score'] = 0
             else:
-                sense['score'] = score / column_count
+                sense['score'] = sum_score / division_count
 
     def print_results(self):
         """
@@ -388,6 +494,7 @@ class GoogleNgramAlgorithm:
 
             if req.status_code == 200:
                 res = re.findall('var data = (.*?);\\n', req.text)
+
                 if res:
                     data = {qry['ngram']: qry['timeseries']
                             for qry in literal_eval(res[0])}
