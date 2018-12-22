@@ -17,13 +17,15 @@ def main():
 
     with open(inputfile) as csvInputFile, open(outputfile, 'w') as csvOutputFile:
         csv_reader = csv.reader(csvInputFile, delimiter=',')
-        csv_writer = csv.writer(csvOutputFile, delimiter='.')
+        csv_writer = csv.writer(csvOutputFile, delimiter=',')
         line_count = 0
         for row in csv_reader:
             if line_count == 0:
                 print(f'Column names are {", ".join(row)}')
             else:
-                print("Word: ", row[1], "Sentence: ", row[0])
+                wordAndSentence = "Word: ", row[1], "Sentence: ", row[0]
+                print(wordAndSentence)
+                csv_writer.writerow(wordAndSentence)
 
                 ngra = GoogleNgramAlgorithm(row[1], row[0], 2, 2)
 
@@ -39,6 +41,7 @@ def main():
                 for outputRow in results:
                     print(str(results[0][0]), ",", str(results[0][2]))
                     csv_writer.writerow(outputRow)
+                csv_writer.writerow("\n\n")
             line_count += 1
 
         print(f'Processed {line_count} lines.')
