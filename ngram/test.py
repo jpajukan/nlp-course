@@ -15,7 +15,7 @@ def main():
     inputfile = sys.argv[1]
     outputfile = sys.argv[2]
 
-    with open(inputfile) as csvInputFile, open(outputfile, 'w') as csvOutputFile:
+    with open(inputfile, encoding="utf-8") as csvInputFile, open(outputfile, 'w') as csvOutputFile:
         csv_reader = csv.reader(csvInputFile, delimiter=',')
         csv_writer = csv.writer(csvOutputFile, delimiter=',')
         line_count = 0
