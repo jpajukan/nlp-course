@@ -1,7 +1,14 @@
 from google_ngram_algorithm import GoogleNgramAlgorithm
-
+from cachehandler import *
 
 def main():
+    #create()
+
+    #insert_cache("asfsadf testi", 1.11)
+
+    #print(get_cache("New state"))
+
+    #exit()
     sentence = "Almost all the music was composed by the trio"
     word = "composed"
 
@@ -22,7 +29,7 @@ def main():
     sentence = "Like all states New Hampshire has two senators in the US Senate. New Hampshire's current senators are Judd Gregg (R) and John E. Sununu (R) whose father John H. Sununu was governor of the state from 1983 ndash 1988"
     word = "states"
 
-    ngra = GoogleNgramAlgorithm(word, sentence, 2, 2, use_wildcards=True)
+    ngra = GoogleNgramAlgorithm(word, sentence, 2, 1, use_wildcards=True)
 
     ngra.prepare()
     ngra.query_google_ngram()
