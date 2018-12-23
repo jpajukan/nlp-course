@@ -1,10 +1,12 @@
 import sqlite3
 
+CACHE_DB_LOCATION = ""
+
 def create():
     # If db does not exist then create it
     # Used only when initializing, no further use needed
 
-    conn = sqlite3.connect("cache_db/cache.sqlite3")
+    conn = sqlite3.connect(CACHE_DB_LOCATION)
     print(sqlite3.version)
 
     c = conn.cursor()
@@ -16,7 +18,7 @@ def create():
 
 def insert_cache(ng, dt):
 
-    conn = sqlite3.connect("cache_db/cache.sqlite3")
+    conn = sqlite3.connect(CACHE_DB_LOCATION)
     c = conn.cursor()
 
     #Check before inserting that it does not already exist
@@ -33,7 +35,7 @@ def insert_cache(ng, dt):
     conn.close()
 
 def get_cache(ng):
-    conn = sqlite3.connect("cache_db/cache.sqlite3")
+    conn = sqlite3.connect(CACHE_DB_LOCATION)
     c = conn.cursor()
     c.execute('SELECT score FROM cache WHERE ngram=?', (ng,))
 
