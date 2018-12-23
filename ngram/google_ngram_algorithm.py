@@ -379,7 +379,6 @@ class GoogleNgramAlgorithm:
                     #if (column != 'year') and ('*' not in column):
                     add_score = float(row[column]) * 0.01 * float(self.total_word_counts[str(int(row['year']))])
 
-                    print(str(int(row['year'])))
                     if math.isnan(add_score):
                         continue
 
