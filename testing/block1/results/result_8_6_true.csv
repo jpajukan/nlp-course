@@ -1,0 +1,417 @@
+Word: ,monarchy,Sentence: ,The Politics of the United Kingdom of Great Britain and Northern Ireland takes place in the framework of a constitutional monarchy in which the Monarch is head of state and the Prime Minister of the United Kingdom is the head of government.
+Synset('monarchy.n.01'),['monarchy'],an autocracy governed by a monarch who usually inherits the authority,17.44102494141102
+"
+","
+"
+Word: ,senate,Sentence: ,A senate is a deliberative body often the upper house or chamber of a legislature. There have been many such bodies in historythe first of which was the Roman Senate.
+Synset('senate.n.01'),['senate'],assembly possessing high legislative powers,66.27615432837307
+Synset('united_states_senate.n.01'),"['United_States_Senate', 'U.S._Senate', 'US_Senate', 'Senate']",the upper house of the United States Congress,15.662850574777885
+"
+","
+"
+Word: ,minister,Sentence: ,he Government of the United Kingdom contains a number of ministries known mainlythough not exclusively as departmentse.g. Ministry of Defence. These are politically led by a Government Minister who is often a Secretary of State and member of the Cabinet. He or she may also be supported by a number of junior Ministers. In practiceseveral government departments and Ministers have responsibilities that cover England alonewhere devolved bodies having responsibility for ScotlandWales and Northern Ireland(for example - the Department of Health or responsibilities that mainly focus on England such as the Department for ChildrenSchools and Families
+Synset('minister.v.02'),['minister'],work as a minister,103.15862462624972
+Synset('minister.v.01'),['minister'],attend to the wants and needs of others,90.82198553739835
+Synset('minister.n.04'),['minister'],the job of a head of a government department,36.85538490172051
+Synset('minister.n.02'),"['minister', 'government_minister']",a person appointed to a high office in the government,36.41099876494837
+Synset('curate.n.01'),"['curate', 'minister_of_religion', 'minister', 'parson', 'pastor', 'rector']",a person authorized to conduct religious worship,5.899037546923856
+Synset('minister.n.03'),"['minister', 'diplomatic_minister']",a diplomat representing one government to another; ranks below ambassador,2.993255007261523
+"
+","
+"
+Word: ,solution,Sentence: ,Rules of Prudence are designed to serve self interest. Do not drink the cleaning solution would be a rule of prudence. This rule would be not considered a moral rule because while it is not morally wrong to drink cleaning solution it does serve your best interest not to do so.
+Synset('solution.n.02'),"['solution', 'answer', 'result', 'resolution', 'solvent']",a statement that solves a problem or explains how to solve the problem,256.19733188662565
+Synset('solution.n.04'),"['solution', 'root']",the set of values that give a true statement when substituted into an equation,205.35024287304273
+Synset('solution.n.05'),['solution'],the successful action of solving a problem,108.56731078431386
+Synset('solution.n.03'),['solution'],a method for solving a problem,77.70760509696991
+Synset('solution.n.01'),['solution'],a homogeneous mixture of two or more substances; frequently (but not necessarily) a liquid solution,22.48061923081208
+"
+","
+"
+Word: ,prudence,Sentence: ,Although prudence would be applied to any such judgment the more difficult tasks which distinguish a person as prudent are those in which various goods have to be weighed against each other as when a person is determining what would be best to give charitable donations or how to punish a child so as to prevent repeating an offense.
+Synset('prudence.n.01'),['prudence'],discretion in practical affairs,18.932489289226893
+Synset('discretion.n.02'),"['discretion', 'discreetness', 'circumspection', 'prudence']",knowing how to avoid embarrassment or distress,15.820185485868311
+"
+","
+"
+Word: ,enrollment,Sentence: ,Lambton College is one of Ontario's 21 Colleges of Applied Arts and Technology. It has a full time enrollment of 2500 and a part-time enrollment of about 8000. It is the city's only post-secondary school.
+Synset('registration.n.02'),"['registration', 'enrollment']",the body of people (such as students) who register or enroll at the same time,30.36894725079276
+Synset('registration.n.01'),"['registration', 'enrollment', 'enrolment']",the act of enrolling,11.443392988445657
+"
+","
+"
+Word: ,run,Sentence: ,It was originally run by Centre by the Bay and Telus however both organizations are no longer affiliated with the event.
+Synset('run.v.13'),['run'],"be operating, running or functioning",24.1612886536662
+Synset('political_campaign.n.01'),"['political_campaign', 'campaign', 'run']",a race between candidates for elective office,19.590455011459476
+Synset('function.v.01'),"['function', 'work', 'operate', 'go', 'run']",perform as expected when applied,15.833729460923584
+Synset('operate.v.01'),"['operate', 'run']","direct or control; projects, businesses, etc.",15.609948545324658
+Synset('run.v.03'),"['run', 'go', 'pass', 'lead', 'extend']","stretch out over a distance, space, time, or scope; run or extend between two points or beyond a certain point",14.918450040447583
+Synset('run.v.25'),"['run', 'black_market']","deal in illegally, such as arms or liquor",14.775201675978732
+Synset('run.v.29'),['run'],cover by running; run a certain distance,14.370863138866497
+Synset('run.v.14'),['run'],change from one state to another,13.938215154408127
+Synset('run.v.23'),"['run', 'lead']",cause something to pass or lead somewhere,13.282332779112958
+Synset('tend.v.01'),"['tend', 'be_given', 'lean', 'incline', 'run']",have a tendency or disposition to do or be something; be inclined,12.973665174722411
+Synset('play.v.18'),"['play', 'run']",cause to emit recorded audio or video,12.446380092649965
+Synset('run.v.33'),['run'],run with the ball; in such sports as football,12.278344237281969
+Synset('move.v.13'),"['move', 'go', 'run']",progress by being changed,10.834234146179464
+Synset('ladder.v.01'),"['ladder', 'run']",come unraveled or undone as if by snagging,10.409982605383501
+Synset('run.v.05'),"['run', 'go']",have a particular form,10.272070041665538
+Synset('range.v.01'),"['range', 'run']",change or be different within limits,10.049354203322816
+Synset('run.v.18'),['run'],occur persistently,9.013732485141485
+Synset('run.v.24'),['run'],make without a miss,8.583353315197678
+Synset('run.n.08'),['run'],the continuous period of time during which something (a machine or a factory) operates or continues in operation,8.583105528492208
+Synset('prevail.v.03'),"['prevail', 'persist', 'die_hard', 'run', 'endure']",continue to exist,6.994165095775003
+Synset('run.n.09'),['run'],unrestricted freedom to use,6.393768115353491
+Synset('run.n.06'),['run'],a regular trip,6.35862766921525
+Synset('run.n.16'),['run'],a short trip,6.35862766921525
+Synset('run.v.30'),"['run', 'run_for']",extend or continue for a certain period of time,6.320622484477404
+Synset('run.v.16'),['run'],be affected by; be subjected to,6.249047188146797
+Synset('run.v.28'),['run'],sail before the wind,6.215012344523211
+Synset('run.v.15'),['run'],cause to perform,5.972786995223654
+Synset('run.v.26'),['run'],cause an animal to move fast,5.751602258423091
+Synset('run.v.11'),['run'],"move about freely and without restraint, or act as if running around in an uncontrolled way",5.358910185407221
+Synset('run.v.34'),['run'],"travel rapidly, by any (unspecified) means",5.358910185407221
+Synset('run.n.10'),['run'],the production achieved during a continuous period of operation (of a machine or factory etc.),4.858151387124756
+Synset('run.n.05'),"['run', 'running', 'running_play', 'running_game']",(American football) a play in which a player attempts to carry the ball through or past the opposing team,4.527909590823261
+Synset('test.n.05'),"['test', 'trial', 'run']",the act of testing something,4.377466662714702
+Synset('run.v.21'),['run'],carry out,4.340225265869112
+Synset('run.v.32'),"['run', 'consort']",keep company,4.114840033858919
+Synset('run.v.41'),"['run', 'unravel']",become undone,4.101853452525117
+Synset('run.v.19'),"['run', 'execute']","carry out a process or program, as on a computer or a machine",3.8874754638815565
+Synset('run.v.31'),['run'],set animals loose to graze,3.622238449173999
+Synset('guide.v.05'),"['guide', 'run', 'draw', 'pass']","pass over, across, or through",3.0054400428528774
+Synset('race.v.02'),"['race', 'run']",compete in a race,2.898377446647883
+Synset('melt.v.01'),"['melt', 'run', 'melt_down']","reduce or cause to be reduced from a solid to a liquid state, usually by heating",2.8006525002914846
+Synset('ply.v.03'),"['ply', 'run']",travel a route regularly,2.7982407288296463
+Synset('run.v.27'),"['run', 'bleed']",be diffused,2.787807214264844
+Synset('streak.n.01'),"['streak', 'run']",an unbroken series of events,2.7785740875623293
+Synset('run.v.06'),"['run', 'flow', 'feed', 'course']","move along, of liquids",2.763473927978462
+Synset('run.n.15'),['run'],an unbroken chronological sequence,2.6992998006440496
+Synset('run.n.07'),"['run', 'running']",the act of running; traveling on foot at a fast pace,2.6723636943705342
+Synset('campaign.v.01'),"['campaign', 'run']","run, stand, or compete for an office or a position",2.621169914601775
+Synset('scat.v.01'),"['scat', 'run', 'scarper', 'turn_tail', 'lam', 'run_away', 'hightail_it', 'bunk', 'head_for_the_hills', 'take_to_the_woods', 'escape', 'fly_the_coop', 'break_away']",flee; take to one's heels; cut and run,2.520445970358938
+Synset('carry.v.15'),"['carry', 'run']",include as the content; broadcast or publicize,2.45054189231602
+Synset('hunt.v.01'),"['hunt', 'run', 'hunt_down', 'track_down']",pursue for food or sport (as of wild animals),2.341065526214225
+Synset('run.n.13'),"['run', 'ladder', 'ravel']",a row of unravelled stitches,2.2210427181686994
+Synset('run.v.01'),['run'],"move fast by using one's feet, with one foot off the ground at any given time",2.2037236392083814
+Synset('run.n.01'),"['run', 'tally']",a score in baseball made by a runner touching all four bases safely,1.9239951874096015
+Synset('footrace.n.01'),"['footrace', 'foot_race', 'run']",a race run on foot,1.9122195350186517
+Synset('rivulet.n.01'),"['rivulet', 'rill', 'run', 'runnel', 'streamlet']",a small stream,1.8303283855203136
+Synset('discharge.n.06'),"['discharge', 'outpouring', 'run']",the pouring forth of a fluid,1.817387686107408
+"
+","
+"
+Word: ,stalls,Sentence: ,The Doctor agrees to talk before the torture session starts and tells Tancredi that he is a Time Lord. Tancredi asks about the girl and the Doctor stalls for time asking how Tancredi communicates with his other selves across time.
+Synset('stall.v.03'),['stall'],deliberately delay an event or action,55.486304401745286
+Synset('stall.v.06'),['stall'],cause an airplane to go into a stall,53.409210845313815
+Synset('stall.v.07'),['stall'],cause an engine to stop,53.409210845313815
+Synset('stall.v.05'),['stall'],"experience a stall in flight, of airplanes",36.70551524427724
+Synset('stall.v.02'),"['stall', 'conk']",come to a stop,27.529136433207928
+Synset('stable.n.01'),"['stable', 'stalls', 'horse_barn']",a farm building for housing horses or other livestock,12.838055510916439
+Synset('stall.n.05'),['stall'],seating in the forward part of the main level of a theater,12.735953347312803
+Synset('stall.n.03'),"['stall', 'stand', 'sales_booth']",a booth where articles are displayed for sale,9.389838087562483
+Synset('stall.v.04'),['stall'],"put into, or keep in, a stall",3.9711289803147527
+Synset('stall.n.01'),['stall'],a compartment in a stable where a single animal is confined and fed,2.9181295830099945
+Synset('procrastinate.v.01'),"['procrastinate', 'stall', ""drag_one's_feet"", ""drag_one's_heels"", 'shillyshally', 'dilly-dally', 'dillydally']",postpone doing what one should be doing,2.7221920509987605
+Synset('stall.n.04'),['stall'],a malfunction in the flight of an aircraft in which there is a sudden loss of lift that results in a downward plunge,2.6056577543133
+Synset('booth.n.02'),"['booth', 'cubicle', 'stall', 'kiosk']",small area set off by walls for special use,1.5672663190715188
+Synset('stall.n.07'),"['stall', 'stalling']",a tactic used to mislead or delay,1.4924058860751659
+Synset('carrel.n.02'),"['carrel', 'carrell', 'cubicle', 'stall']",small individual study area in a library,1.0013685149493154
+"
+","
+"
+Word: ,stage,Sentence: ,Kovacs reportedly disliked working in front of a live audience as was the case with the shows he did for NBC in the 1950s. He found the presence of an audience distracting. And those in the seats frequently did not understand some of the more elaborate visual gags and special effects which could only be appreciated by watching studio monitors instead of the stage.
+Synset('phase.n.01'),"['phase', 'stage']",any distinct time period in a sequence of events,4702.464383240946
+Synset('degree.n.02'),"['degree', 'level', 'stage', 'point']",a specific identifiable position in a continuum or series or especially in a process,2540.0648961006355
+Synset('stage.v.01'),"['stage', 'present', 'represent']","perform (a play), especially on a stage",2315.32751868392
+Synset('stage.n.07'),['stage'],any scene regarded as a setting for exhibiting or doing something,1856.1819424792095
+Synset('stage.n.08'),"['stage', 'microscope_stage']",a small platform on a microscope where the specimen is mounted for examination,1002.0537023180722
+Synset('stage.n.04'),['stage'],the theater as a profession (usually `the stage'),926.6887405098087
+Synset('stage.n.03'),['stage'],a large platform on which people can stand and can be seen by an audience,678.9426088349177
+Synset('stage.n.06'),"['stage', 'leg']",a section or portion of a journey or course,619.0152670219368
+Synset('stage.v.02'),"['stage', 'arrange']","plan, organize, and carry out (an event)",504.90858785464974
+Synset('stagecoach.n.01'),"['stagecoach', 'stage']",a large coach-and-four formerly used to carry passengers and mail on regular routes between towns,490.8194430710929
+"
+","
+"
+Word: ,set,Sentence: ,He also developed such routines as an all-gorilla version of Swan Lake a poker game set to Beethoven's  Fifth Symphony the Silent Show in which a nerdy character interacts with the world accompanied solely by music and sound effects parodies of typical television commercials and movie genres and various musical segments with everyday items such as kitchen appliances or office equipment moving in sync to music.
+Synset('set.n.08'),['set'],a unit of play in tennis or squash,106.02348115094921
+Synset('place.v.11'),"['place', 'put', 'set']",estimate,26.313068672092353
+Synset('set.n.02'),['set'],(mathematics) an abstract collection of numbers or symbols,17.546586667251667
+Synset('specify.v.02'),"['specify', 'set', 'determine', 'define', 'fix', 'limit']",decide upon or fix definitely,12.513945593612723
+Synset('set.n.01'),['set'],a group of things of the same kind that belong together and are so used,10.604397200287204
+Synset('set.v.04'),"['set', 'mark']",establish as the highest level or best performance,9.691031311449766
+Synset('set.n.05'),"['set', 'circle', 'band', 'lot']",an unofficial association of people or groups,9.40420099645526
+Synset('set.s.05'),['set'],being below the horizon,9.162434206599912
+Synset('hardening.n.02'),"['hardening', 'solidifying', 'solidification', 'set', 'curing']",the process of becoming hard or solid by cooling or drying or crystallization,9.070378800972035
+Synset('put.v.01'),"['put', 'set', 'place', 'pose', 'position', 'lay']",put into a certain place or abstract location,8.880213377090277
+Synset('arrange.v.06'),"['arrange', 'set']",adapt for performance in a different way,6.55616738208907
+Synset('set.v.09'),"['set', 'localize', 'localise', 'place']",locate,6.281614625904374
+Synset('set.v.10'),"['set', 'go_down', 'go_under']",disappear beyond the horizon,5.902219975281281
+Synset('set.v.13'),['set'],apply or start,5.754458916718899
+Synset('set.v.16'),['set'],put into a position that will restore a normal state,5.144203699738899
+Synset('laid.s.01'),"['laid', 'set']","set down according to a plan:""a carefully laid table with places set for four people""",5.107929531975153
+Synset('located.s.01'),"['located', 'placed', 'set', 'situated']",situated in a particular spot or position,4.828347271466131
+Synset('set.v.06'),['set'],fix in a border,4.798492516534263
+Synset('set.n.12'),"['set', 'readiness']",(psychology) being temporarily ready to respond in a particular way,4.758206774996697
+Synset('set.n.11'),['set'],the descent of a heavenly body below the horizon,4.7352157593036965
+Synset('set.v.18'),['set'],"give a fine, sharp edge to a knife or razor",4.607486508016187
+Synset('hardened.s.05'),"['hardened', 'set']",converted to solid form (as concrete),4.581217103299956
+Synset('plant.v.01'),"['plant', 'set']","put or set (seeds, seedlings, or plants) into the ground",4.0487326787229305
+Synset('determined.s.04'),"['determined', 'dictated', 'set']",determined or decided upon as by an authority,3.805327110437783
+Synset('determine.v.03'),"['determine', 'set']",fix conclusively or authoritatively,3.58245671297748
+Synset('fixed.s.02'),"['fixed', 'set', 'rigid']",fixed and unmoving,3.5470972359330455
+Synset('fit.s.02'),"['fit', 'primed', 'set']",(usually followed by `to' or `for') on the point of or strongly disposed,3.2747915435697674
+Synset('set.v.05'),['set'],put into a certain state; cause to be in a certain state,3.065572216030676
+Synset('stage_set.n.01'),"['stage_set', 'set']",representation consisting of the scenery and other properties used to identify the location of a dramatic production,3.0527511603210535
+Synset('set.n.13'),['set'],any electronic equipment that receives or transmits radio or tv signals,2.701973028681061
+Synset('set_up.v.04'),"['set_up', 'lay_out', 'set']",get ready for a particular purpose or event,2.4085405560296116
+Synset('fix.v.12'),"['fix', 'prepare', 'set_up', 'ready', 'gear_up', 'set']","make ready or suitable or equip in advance for a particular purpose or for some use, event, etc",2.386632530307975
+Synset('set.v.17'),"['set', 'countersink']","insert (a nail or screw below the surface, as into a countersink)",2.3096652907909427
+Synset('typeset.v.01'),"['typeset', 'set']",set in type,2.306015617305175
+Synset('jell.v.01'),"['jell', 'set', 'congeal']",become gelatinous,2.290608551649978
+Synset('adjust.v.01'),"['adjust', 'set', 'correct']",alter or regulate so as to achieve accuracy or conform to a standard,2.2083510160030877
+Synset('set.n.03'),"['set', 'exercise_set']",several exercises intended to be done in series,2.1119572985999553
+Synset('sic.v.01'),"['sic', 'set']",urge to attack someone,2.0671969357850624
+Synset('set.v.08'),['set'],set to a certain position or cause to operate correctly,2.037290492230111
+Synset('rig.v.04'),"['rig', 'set', 'set_up']",equip with sails or masts,2.022581895819441
+Synset('set.n.07'),['set'],the act of putting something in position,1.9709498197180797
+Synset('bent.n.01'),"['bent', 'set']",a relatively permanent inclination to react in a particular way,1.8916396248382918
+Synset('fructify.v.03'),"['fructify', 'set']",bear fruit,1.8431365562914952
+Synset('dress.v.16'),"['dress', 'arrange', 'set', 'do', 'coif', 'coiffe', 'coiffure']",arrange attractively,1.5747359394796578
+Synset('set.n.10'),"['Set', 'Seth']",evil Egyptian god with the head of a beast that has high square ears and a long snout; brother and murderer of Osiris,0.22456090314300806
+"
+","
+"
+Word: ,land,Sentence: ,According to the United States Census Bureau the town has a total area of 0.1 nbsp square mile s 0.1 nbsp km all of it land and none water.
+Synset('farming.n.02'),"['farming', 'land']",agriculture considered as an occupation or way of life,4473.626900603719
+Synset('nation.n.02'),"['nation', 'land', 'country']",the people who live in a nation or country,3869.542186519193
+Synset('state.n.04'),"['state', 'nation', 'country', 'land', 'commonwealth', 'res_publica', 'body_politic']",a politically organized body of people under a single government,3556.3103827419695
+Synset('land.v.05'),['land'],deliver (a blow),3286.2017398269686
+Synset('country.n.02'),"['country', 'state', 'land']",the territory occupied by a nation,2816.8558986462886
+Synset('down.v.04'),"['down', 'shoot_down', 'land']",shoot at and force to come down,2317.6849231012325
+Synset('kingdom.n.01'),"['kingdom', 'land', 'realm']",a domain in which something is dominant,2073.7040249687807
+Synset('land.v.01'),"['land', 'set_down']",reach or come to rest,2026.0621790574141
+Synset('land.v.06'),"['land', 'set_ashore', 'shore']",arrive on shore,1952.9853884254276
+Synset('land.v.02'),"['land', 'put_down', 'bring_down']",cause to come to the ground,1932.3738506853151
+Synset('bring.v.05'),"['bring', 'land']",bring into a different state,1884.1029024307877
+Synset('land.n.04'),"['land', 'dry_land', 'earth', 'ground', 'solid_ground', 'terra_firma']",the solid part of the earth's surface,1850.4133930138112
+Synset('land.n.02'),"['land', 'ground', 'soil']",material in the top layer of the surface of the earth in which plants can grow (especially with reference to its quality or use),1653.4687631964964
+Synset('land.v.04'),['land'],bring ashore,1568.5100367540542
+Synset('estate.n.02'),"['estate', 'land', 'landed_estate', 'acres', 'demesne']",extensive landed property (especially in the country) retained by the owner for his own use,1301.3973557171935
+Synset('land.n.01'),['land'],the land on which real estate is located,1236.6416401955692
+Synset('domain.n.02'),"['domain', 'demesne', 'land']",territory over which rule or control is exercised,1011.6517831576202
+Synset('land.n.10'),"['Land', 'Din_Land', 'Edwin_Herbert_Land']",United States inventor who incorporated Polaroid film into lenses and invented the one step photographic process (1909-1991),159.96327535840192
+"
+","
+"
+Word: ,club,Sentence: ,Laconia is the home of a 131 year old Odd Fellows Club. The club was first organized on May 20th 1875.
+Synset('club.n.02'),"['club', 'social_club', 'society', 'guild', 'gild', 'lodge', 'order']",a formal association of people with similar interests,1910.3490324103602
+Synset('clubhouse.n.01'),"['clubhouse', 'club']",a building that is occupied by a social club,1734.3474193371258
+Synset('golf_club.n.02'),"['golf_club', 'golf-club', 'club']",golf equipment used by a golfer to hit a golf ball,1431.8069986051582
+Synset('club.v.04'),['club'],gather into a club-like mass,1139.4381187748497
+Synset('cabaret.n.01'),"['cabaret', 'nightclub', 'night_club', 'club', 'nightspot']",a spot that is open late at night and that provides entertainment (as singers or dancers) as well as dancing and food and drink,1048.4415378784129
+Synset('baseball_club.n.01'),"['baseball_club', 'ball_club', 'club', 'nine']",a team of professional baseball players who play and travel together,703.0017276114315
+Synset('club.n.06'),['club'],a playing card in the minor suit that has one or more black trefoils on it,589.032155359424
+Synset('club.v.03'),"['club', 'bludgeon']",strike with a club or a bludgeon,383.05466905982604
+Synset('club.v.02'),['club'],gather and spend time together,314.4267784246789
+Synset('club.n.03'),['club'],stout stick that is larger at one end,313.7101696720168
+Synset('club.v.01'),['club'],unite with a common purpose,227.6547963550098
+"
+","
+"
+Word: ,service,Sentence: ,The NSW Government Urban Transport Statement identifies capacity and service improvements for the North Shore Line with plans to add extra tracks between Gordon and Chatswood and extra platforms at St Leonards by 2017.
+Synset('service.n.05'),['service'],employment in or work for another,38.613364027973226
+Synset('service.v.01'),"['service', 'serve']",be used by; as of a utility,24.123201037564563
+Synset('service.n.01'),['service'],work done by one person or group that benefits another,22.068496626821943
+Synset('service.n.04'),['service'],a company or agency that performs a public service; subject to government regulation,17.96308983652165
+Synset('service.n.11'),['service'],(law) the acts performed by an English feudal tenant for the benefit of his lord which formed the consideration for the property granted to him,13.988959023080447
+Synset('service.v.02'),['service'],make fit for use,13.19607801434401
+Synset('military_service.n.01'),"['military_service', 'armed_service', 'service']",a force that is a branch of the armed forces,13.036868746418918
+Synset('service.n.13'),"['service', 'serving', 'service_of_process']",the act of delivering a writ or summons upon someone,13.018598513992874
+Synset('service.n.02'),['service'],an act of help or assistance,9.756692167740121
+Synset('avail.n.01'),"['avail', 'help', 'service']",a means of serving,9.641344331132697
+Synset('service.n.09'),"['service', 'table_service']",tableware consisting of a complete set of articles (silver or dishware) for use at table,8.740656005936623
+Synset('service.n.07'),"['Service', 'Robert_William_Service']",Canadian writer (born in England) who wrote about life in the Yukon Territory (1874-1958),6.458694209997511
+Synset('serve.v.14'),"['serve', 'service']",mate with,6.245360654725287
+Synset('overhaul.n.01'),"['overhaul', 'inspection_and_repair', 'service']",periodic maintenance on a car or machine,5.707204089202421
+Synset('serve.n.01'),"['serve', 'service']",(sports) a stroke that puts the ball in play,5.3376235409640005
+Synset('service.n.03'),"['service', 'religious_service', 'divine_service']",the act of public worship following prescribed rules,5.329966010452785
+Synset('servicing.n.01'),"['servicing', 'service']",the act of mating by male animals,5.219520345523567
+Synset('service.n.15'),['service'],the performance of duties by a waiter or servant,4.902002801083876
+"
+","
+"
+Word: ,transport,Sentence: ,The North Shore Line was opened on 1 January 1890 as a single track between Hornsby and St Leonards. The line was extended to the Sydney Harbour foreshore at Milsons Point on 1 May 1893. Transport between this original Milsons Point station and central Sydney was by ferry boat.
+Synset('transportation.n.05'),"['transportation', 'shipping', 'transport']",the commercial enterprise of moving goods and materials,1400.512405496647
+Synset('ecstasy.n.01'),"['ecstasy', 'rapture', 'transport', 'exaltation', 'raptus']",a state of being carried away by overwhelming emotion,1148.5101877588163
+Synset('transport.v.02'),"['transport', 'carry']","move while supporting, either in a vehicle or in one's hands or on one's body",684.70882405783
+Synset('transportation.n.02'),"['transportation', 'transport', 'transfer', 'transferral', 'conveyance']",the act of moving something from one location to another,583.650981245736
+Synset('tape_drive.n.01'),"['tape_drive', 'tape_transport', 'transport']",a mechanism that transports magnetic tape across the read/write heads of a tape playback/recorder,581.9249014356548
+Synset('transport.v.04'),"['transport', 'send', 'ship']",transport commercially,433.2596606643094
+Synset('transmit.v.04'),"['transmit', 'transfer', 'transport', 'channel', 'channelize', 'channelise']",send from one person or place to another,402.6706544283638
+Synset('transport.v.01'),['transport'],move something or somebody around; usually over long distances,379.9899400780452
+Synset('transport.n.02'),['transport'],an exchange of molecules (and their kinetic energy and momentum) across the boundary between adjacent layers of a fluid or across cell membranes,342.7904763784214
+Synset('enchant.v.01'),"['enchant', 'enrapture', 'transport', 'enthrall', 'ravish', 'enthral', 'delight']",hold spellbound,233.792844899598
+Synset('conveyance.n.03'),"['conveyance', 'transport']",something that serves as a means of transportation,164.05209773526835
+"
+","
+"
+Word: ,construction,Sentence: ,The construction works for the Sydney Harbour Bridge necessitated truncation of the southern terminus from Milsons Point to Lavender Bay.
+Synset('construction.n.05'),['construction'],drawing a figure satisfying certain conditions as part of solving a problem or proving a theorem,17.14403492845153
+Synset('construction.n.06'),"['construction', 'twist']",an interpretation of a text or action,12.338467399208135
+Synset('construction.n.03'),"['construction', 'mental_synthesis']",the creation of a construct; the process of combining ideas into a congruous object of thought,10.457531400953537
+Synset('construction.n.07'),"['construction', 'building']",the commercial activity involved in repairing old structures or constructing new ones,9.119949419588664
+Synset('construction.n.01'),"['construction', 'building']",the act of constructing something,8.633794584410369
+Synset('structure.n.01'),"['structure', 'construction']",a thing constructed; a complex entity constructed of many parts,5.908376425110987
+Synset('construction.n.02'),"['construction', 'grammatical_construction', 'expression']",a group of words that form a constituent of a sentence and are considered as a single unit,5.07391003215198
+"
+","
+"
+Word: ,team,Sentence: ,The Bulgaria national football team is the national football team of Bulgaria and is controlled by the Bulgarian Football Union.
+Synset('team.v.01'),"['team', 'team_up']",form a team,115.60348208928988
+Synset('team.n.02'),['team'],two or more draft animals that work together to pull something,89.22376903214139
+Synset('team.n.01'),"['team', 'squad']",a cooperative unit (especially in sports),85.80167830698542
+"
+","
+"
+Word: ,offers,Sentence: ,The stadium also offers judo artistic gymnastics basketball boxing aerobics fencing and table tennis halls as well as a general physical training hall two conference halls and three restaurants.
+Synset('put_up.v.02'),"['put_up', 'provide', 'offer']",mount or put up,175.61486490795323
+Synset('offer.v.05'),"['offer', 'extend']",offer verbally,146.8367120399789
+Synset('extend.v.04'),"['extend', 'offer']",make available; provide,138.17425053324453
+Synset('offer.v.08'),['offer'],produce or introduce on the stage,135.32161820137858
+Synset('offer.v.06'),['offer'],make available for sale,122.0904746613096
+Synset('offer.v.02'),"['offer', 'proffer']",present for acceptance or rejection,115.60006985858963
+Synset('offer.v.01'),['offer'],"make available or accessible, provide or furnish",97.18794550660915
+Synset('volunteer.v.02'),"['volunteer', 'offer']",agree freely,90.59117682312974
+Synset('offer.n.01'),"['offer', 'offering']",the verbal act of offering,87.91522891334237
+Synset('offer.v.13'),['offer'],threaten to do something,73.42077157722153
+Synset('offer.v.04'),['offer'],put forward for consideration,69.92676547050202
+Synset('offer.n.02'),"['offer', 'offering']",something offered (as a proposal or bid),66.24837182198702
+Synset('offer.v.09'),"['offer', 'offer_up']",present as an act of worship,54.78638095593715
+Synset('crack.n.09'),"['crack', 'fling', 'go', 'pass', 'whirl', 'offer']",a usually brief attempt,51.21184635166429
+Synset('propose.v.05'),"['propose', 'declare_oneself', 'offer', 'pop_the_question']",ask (someone) to marry you,46.700675163399275
+Synset('offer.v.07'),"['offer', 'bid', 'tender']",propose a payment,19.109940992266157
+"
+","
+"
+Word: ,emitting,Sentence: ,A gamma camera is a device used to image gamma radiation emitting radioisotopes a technique known as scintigraphy.
+Synset('emit.v.02'),"['emit', 'give_out', 'give_off']","give off, send forth, or discharge; as of light, heat, or radiation, vapor, etc.",16.14447735602162
+Synset('emit.v.01'),"['emit', 'breathe', 'pass_off']",expel (gases or odors),4.428404484381123
+Synset('utter.v.02'),"['utter', 'emit', 'let_out', 'let_loose']",express audibly; utter sounds (not necessarily words),3.176772023792548
+"
+","
+"
+Word: ,controls,Sentence: ,The gantry is connected to a computer system that both controls the operation of the camera as well as acquisition and storage of acquired images.
+Synset('master.v.04'),"['master', 'control']",have a firm understanding or knowledge of; be on top of,396.40557198819124
+Synset('control.n.02'),['control'],a relation of constraint of one entity (thing or person or group) by another,360.21244042670804
+Synset('control.n.10'),['control'],a spiritual agency that is assumed to assist the medium during a seance,244.89278223597546
+Synset('control.n.11'),['control'],the economic policy of controlling or limiting or curbing prices or wages etc.,209.84932048384118
+Synset('control_condition.n.01'),"['control_condition', 'control']",a standard against which other conditions can be compared in a scientific experiment,201.46085364404942
+Synset('command.n.06'),"['command', 'control', 'mastery']",great skillfulness and knowledge of some subject or activity,185.60609732571254
+Synset('control.n.03'),['control'],(physiology) regulation or maintenance of a function or action or reflex etc,185.5271910528188
+Synset('control.v.06'),['control'],verify by using a duplicate register for comparison,148.59797247802075
+Synset('control.v.05'),"['control', 'verify']",check or regulate (a scientific experiment) by conducting a parallel experiment or comparing with another standard,135.05833797397773
+Synset('see.v.10'),"['see', 'check', 'insure', 'see_to_it', 'ensure', 'control', 'ascertain', 'assure']",be careful or certain to do something; make certain of something,131.04451964007356
+Synset('manipulate.v.05'),"['manipulate', 'keep_in_line', 'control']","control (others or oneself) or influence skillfully, usually to one's advantage",129.92944912013422
+Synset('control.v.02'),"['control', 'hold_in', 'hold', 'contain', 'check', 'curb', 'moderate']",lessen the intensity of; temper; hold in restraint; hold or keep within limits,124.93267729860537
+Synset('control.n.01'),['control'],power to direct or determine,122.89218138964286
+Synset('control.v.01'),"['control', 'command']",exercise authoritative control or power over,109.6553729219496
+Synset('operate.v.03'),"['operate', 'control']",handle and cause to function,105.54988846221603
+Synset('control.n.05'),['control'],the activity of managing or exerting control over something,103.3705006558044
+Synset('control.n.09'),"['control', 'controller']",a mechanism that controls the operation of a machine,98.33587863271447
+Synset('dominance.n.02'),"['dominance', 'ascendance', 'ascendence', 'ascendancy', 'ascendency', 'control']",the state that exists when one person or group has power over another,97.53395657259377
+Synset('restraint.n.02'),"['restraint', 'control']",discipline in personal and social activities,91.85881784062964
+"
+","
+"
+Word: ,anger,Sentence: ,Hal Anger developed the first gamma camera in 1957. His original design frequently called the Anger camera is still widely used today. The Anger camera uses sets of vacuum tube photomultipliers.
+Synset('anger.v.02'),"['anger', 'see_red']",become angry,1747.8816143943359
+Synset('anger.v.01'),['anger'],make angry,461.45124223699935
+Synset('anger.n.01'),"['anger', 'choler', 'ire']",a strong emotion; a feeling that is oriented toward some real or supposed grievance,387.53922238257945
+Synset('wrath.n.02'),"['wrath', 'anger', 'ire', 'ira']",belligerence aroused by a real or supposed wrong (personified as one of the deadly sins),307.76739054618196
+Synset('anger.n.02'),"['anger', 'angriness']",the state of being angry,278.1748344910224
+"
+","
+"
+Word: ,shock,Sentence: ,The DualShock officially DUALSHOCK and occasionally referred to as Dual Shock is a line of vibration-feedback gamepads by Sony for the PlayStation PlayStation 2 and PlayStation 3 video game console s.
+Synset('shock.v.01'),"['shock', 'floor', 'ball_over', 'blow_out_of_the_water', 'take_aback']",surprise greatly; knock someone's socks off,19.610849555774177
+Synset('electric_shock.n.03'),"['electric_shock', 'electrical_shock', 'shock']",a reflex response to the passage of electric current through the body,19.18201339138194
+Synset('shock.n.08'),['shock'],a bushy thick mass (especially hair),10.611855659068796
+Synset('shock_absorber.n.01'),"['shock_absorber', 'shock', 'cushion']",a mechanical damper; absorbs energy of sudden impulses,5.1573003600021305
+Synset('shock.n.02'),"['shock', 'impact']",the violent interaction of individuals or groups entering into combat,4.632928792355142
+Synset('shock.v.05'),['shock'],collect or gather into shocks,4.578358745981806
+Synset('shock.v.06'),['shock'],subject to electrical shocks,1.6401926765701527
+Synset('traumatize.v.01'),"['traumatize', 'traumatise', 'shock']",inflict a trauma upon,0.8998563446259167
+Synset('shock.n.05'),"['shock', 'seismic_disturbance']",an instance of agitation of the earth's crust,0.8559669486759444
+Synset('shock.n.06'),"['shock', 'blow']",an unpleasant or disappointing surprise,0.8292136780762625
+Synset('shock.v.04'),['shock'],collide violently,0.6893245929044123
+Synset('shock.n.04'),['shock'],(pathology) bodily collapse or near collapse caused by inadequate oxygen delivery to the cells; characterized by reduced cardiac output and rapid heartbeat and circulatory insufficiency and pallor,0.6680335631918802
+Synset('jolt.n.01'),"['jolt', 'jar', 'jounce', 'shock']",a sudden jarring impact,0.5137951372035476
+Synset('daze.n.01'),"['daze', 'shock', 'stupor']",the feeling of distress and disbelief that you have when something bad happens accidentally,0.3155761228577721
+Synset('shock.v.03'),['shock'],strike with horror or terror,0.26127773646550484
+Synset('shock.n.07'),['shock'],a pile of sheaves of grain set on end in a field to dry; stalks of Indian corn set up in a field,0.2352760213244382
+Synset('shock.v.02'),"['shock', 'offend', 'scandalize', 'scandalise', 'appal', 'appall', 'outrage']",strike with disgust or revulsion,0.18680425062208225
+"
+","
+"
+Word: ,rumble,Sentence: ,PlayStation 3 firmware 1.94 or higher is required to use the DualShock 3. The first software content release supporting the DualShock 3 was the Gran Turismo 5 Prologue free demo made available in the Japanese PlayStation Store on October 20 2007. A partial list of software that includes rumble support including patches downloadable add-ons from the PlayStation Store to add rumble to software released before September 2007 was announced by SCEI at the TGS 2007. Support was added to MotorStorm with an online version 3.0 patch in October 2007. In consoles with backwards compatibility the DualShock 3 controller vibration function can be used in appropriate PS2 and PS1 titles. Future releases of games that support DualShock 3 capability will be labeled with an icon of the controller and DualShock 3 Compatible.
+Synset('rumble.v.01'),"['rumble', 'grumble']",make a low noise,9.112628644745753
+Synset('rumble.n.03'),"['rumble', 'gang_fight']",a fight between rival gangs of adolescents,4.416960724415393
+Synset('rumble.n.02'),['rumble'],a servant's seat (or luggage compartment) in the rear of a carriage,1.7457673897589083
+Synset('grumble.v.03'),"['grumble', 'growl', 'rumble']",to utter or emit low dull rumbling sounds,1.6810685129690148
+Synset('rumble.n.01'),"['rumble', 'rumbling', 'grumble', 'grumbling']",a loud low dull continuous noise,0.8920837821016635
+"
+","
+"
+Word: ,developed,Sentence: ,Zone of the Enders also known as Z.O.E. is a video game that was developed and published by Konami in 2001 for the PlayStation 2. It was produced by and is closely associated with Hideo Kojima.
+Synset('develop.v.09'),['develop'],be gradually disclosed or unfolded; become manifest; ,1884.0145838881417
+Synset('developed.a.01'),['developed'],being changed over time so as to be e.g. stronger or more complete or more useful,1712.2083351020904
+Synset('developed.s.03'),['developed'],(of real estate) made more useful and profitable as by building or laying out roads,1712.2083351020904
+Synset('develop.v.17'),['develop'],move one's pieces into strategically more advantageous positions,1523.8908336348804
+Synset('develop.v.18'),['develop'],move into a strategically more advantageous position,1523.8908336348804
+Synset('develop.v.14'),"['develop', 'grow']",grow emotionally or mature,1486.6430771931168
+Synset('develop.v.03'),"['develop', 'acquire', 'evolve']",gain through experience,1333.8298193518206
+Synset('break.v.53'),"['break', 'recrudesce', 'develop']",happen,1307.1620280672244
+Synset('modernize.v.02'),"['modernize', 'modernise', 'develop']",become technologically advanced,1285.6862902959067
+Synset('grow.v.08'),"['grow', 'develop', 'produce', 'get', 'acquire']",come to have or undergo a change of (physical features and attributes),1169.9944142642375
+Synset('develop.v.12'),"['develop', 'make_grow']",cause to grow and differentiate in ways conforming to its natural development,1136.5689451627206
+Synset('develop.v.10'),['develop'],"grow, progress, unfold, or evolve through a process of evolution, natural growth, differentiation, or a conducive environment",987.8097279779039
+Synset('developed.s.02'),"['developed', 'highly-developed']",(used of societies) having high industrial development,856.1041675510452
+Synset('develop.v.13'),['develop'],generate gradually,770.0978219811186
+Synset('develop.v.15'),['develop'],make visible by means of chemical solutions,661.5619232089329
+Synset('originate.v.01'),"['originate', 'arise', 'rise', 'develop', 'uprise', 'spring_up', 'grow']",come into existence; take on form or shape,567.0723139455685
+Synset('build_up.v.05'),"['build_up', 'develop']",change the use of and make available or usable,554.8584123717628
+Synset('evolve.v.01'),"['evolve', 'germinate', 'develop']",work out,502.1676160888998
+Synset('develop.v.01'),['develop'],"make something new, such as a product or a mental or artistic creation",392.86275288312646
+Synset('develop.v.21'),['develop'],expand in the form of a series,375.56000013693875
+Synset('train.v.01'),"['train', 'develop', 'prepare', 'educate']",create by training and teaching,338.7502255869109
+Synset('develop.v.16'),['develop'],"superimpose a three-dimensional surface on a plane without stretching, in geometry",247.68843443860533
+Synset('develop.v.19'),['develop'],elaborate by the unfolding of a musical idea and by the working out of the rhythmic and harmonic changes in the theme,146.33459761070134
+Synset('explicate.v.02'),"['explicate', 'formulate', 'develop']","elaborate, as of theories and hypotheses",103.55236882973884
+"
+","
+"
+Word: ,composed,Sentence: ,Almost all the music was composed by the trio.
+Synset('frame.v.05'),"['frame', 'compose', 'draw_up']",make up plans or basic details for,1716.2548892932357
+Synset('compose.v.02'),"['compose', 'write']",write music,1242.156652148644
+Synset('compose.v.01'),['compose'],form the substance of,758.4593782022972
+Synset('composed.a.01'),['composed'],serenely self-possessed and free from agitation especially in times of stress,486.08775068302947
+Synset('compose.v.04'),"['compose', 'compile']",put together out of existing material,470.4792007720696
+Synset('write.v.01'),"['write', 'compose', 'pen', 'indite']",produce a literary work,417.50915055907893
+Synset('compose.v.05'),['compose'],"calm (someone, especially oneself); make quiet",318.601594154851
+"
+","
+"
+Word: ,calm,Sentence: ,He came across as a very rational and calm commander who often urged Viola to take caution with Leo ordering her retreat at one point.
+Synset('calm.v.03'),"['calm', 'calm_down', 'cool_off', 'chill_out', 'simmer_down', 'settle_down', 'cool_it']","become quiet or calm, especially after a state of agitation",62.49543849290302
+Synset('calm_air.n.01'),"['calm_air', 'calm']",wind moving at less than 1 knot; 0 on the Beaufort scale,48.00536939108378
+Synset('calm.v.01'),"['calm', 'calm_down', 'quiet', 'tranquilize', 'tranquillize', 'tranquillise', 'quieten', 'lull', 'still']",make calm or still,23.769349041871052
+Synset('calm.a.02'),['calm'],(of weather) free from storm or wind,14.506868889608484
+Synset('steady.v.01'),"['steady', 'calm', 'becalm']",make steady,4.2090151741963355
+Synset('sedate.v.01'),"['sedate', 'calm', 'tranquilize', 'tranquillize', 'tranquillise']",cause to be calm or quiet as by administering a sedative to,4.077162475595722
+Synset('calm.s.01'),"['calm', 'unagitated', 'serene', 'tranquil']",not agitated; without losing self-possession,3.9303342109164174
+Synset('composure.n.01'),"['composure', 'calm', 'calmness', 'equanimity']",steadiness of mind under stress,2.6561957948506025
+"
+","
+"
