@@ -162,8 +162,10 @@ class GoogleNgramAlgorithm:
         word_tokens = word_tokenize(self.target_context)
 
         stopword_filtered_sentence = []
+        other_unwanted = ["'s", "' s", "'"]
+
         for w in word_tokens:
-            if w not in stop_words:
+            if w not in stop_words and (w not in other_unwanted):
                 stopword_filtered_sentence.append(w)
 
         stopword_filtered_sentence_lowercase = [item.lower() for item in stopword_filtered_sentence]
@@ -365,9 +367,9 @@ class GoogleNgramAlgorithm:
             modifiednames = {}
             for column in sense['query_results']:
                 column_new = column.replace(" - ", "-")
-                column_new = column_new.replace(" &#39; ", "'")
-                column_new = column_new.replace(" &#39;", "'")
-                column_new = column_new.replace("&#39; ", "'")
+                #column_new = column_new.replace(" &#39; ", "'")
+                #column_new = column_new.replace(" &#39;", "'")
+                #column_new = column_new.replace("&#39; ", "'")
                 column_new = column_new.replace("&#39;", "'")
 
                 if column != column_new:
