@@ -337,6 +337,8 @@ class GoogleNgramAlgorithm:
 
             return query
 
+
+
     def analyze(self):
         """
         Score every synset and return information
@@ -349,7 +351,7 @@ class GoogleNgramAlgorithm:
 
         for sense in self.data:
             # Score is actually occurence count
-            score = 0
+            #score = 0
             ##print(sense['query_results'])
 
             ##print(sense['query_results'].to_string())
@@ -358,8 +360,24 @@ class GoogleNgramAlgorithm:
 
             #validien kolumnien määrä, otetaan käytäntö laskea yhdeksi kaikki tähtikolumnit?
             #column_count = 0
-            column_scores = {}
 
+            #Modify some column name stuff because google ngram viewer breaks - ' and stuff
+            modifiednames = {}
+            for column in sense['query_results']:
+                column_new = column.replace(" - ", "-")
+                column_new = column_new.replace(" &#39; ", "'")
+                column_new = column_new.replace(" &#39;", "'")
+                column_new = column_new.replace("&#39; ", "'")
+                column_new = column_new.replace("&#39;", "'")
+
+                if column != column_new:
+                    modifiednames[column] = column_new
+                    print("Column %s will be replaced with name %s" % (column, column_new))
+
+            if len(modifiednames.keys()) > 0:
+                sense['query_results'].rename(columns=modifiednames, inplace=True)
+
+            column_scores = {}
 
             for column in sense['query_results']:
                 #if (column != 'year') and ('*' not in column):
