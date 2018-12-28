@@ -404,6 +404,9 @@ class GoogleNgramAlgorithm:
                         for column_ready in column_scores.keys():
                             column_ready_words = column_ready.split()
 
+                            if len(column_ready_words) == 2:
+                                continue
+
                             if (column_ready_words[0] == column_checking_words[0]) and (column_ready_words[2] == column_checking_words[2]):
                                 found = True
                                 break
