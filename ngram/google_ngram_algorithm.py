@@ -379,7 +379,7 @@ class GoogleNgramAlgorithm:
 
             for column in sense['query_results']:
                 if (column != 'year'):
-                    if 3 == len(column.split()) and ('*' not in column):
+                    if (3 == len(column.split())) and ('*' not in column):
                         found = False
                         column_checking_words = column.split()
 
@@ -391,7 +391,7 @@ class GoogleNgramAlgorithm:
                                 break
 
                         if not found:
-                            wc_ngram = column_ready_words[0] + ' * ' + column_ready_words[2]
+                            wc_ngram = column_checking_words[0] + ' * ' + column_checking_words[2]
                             additional_wildcard_columns.append(wc_ngram)
                             additional_wildcard_columns_lookup_dict[column] = wc_ngram
 
@@ -404,20 +404,24 @@ class GoogleNgramAlgorithm:
             # Loop over rows and count valid columns
 
             for index, row in sense['query_results'].iterrows():
-                #for column in sense['query_results']:
-                for column in column_scores.keys():
-                    #if (column != 'year') and ('*' not in column):
-                    add_score = float(row[column]) * 0.01 * float(self.total_word_counts[str(int(row['year']))])
+                for column in sense['query_results']:
+                #for column in column_scores.keys():
+                    if (column != 'year'):
+                        if (len(column.split()) == 3) and ('*' not in column):
+                            if column not in additional_wildcard_columns_lookup_dict.keys():
+                                continue
 
-                    if math.isnan(add_score):
-                        continue
+                        add_score = float(row[column]) * 0.01 * float(self.total_word_counts[str(int(row['year']))])
 
-                    #score += add_score
-                    if column in additional_wildcard_columns_lookup_dict.keys():
-                        realcolumn = additional_wildcard_columns_lookup_dict[column]
-                        column_scores[realcolumn] += add_score
-                    else:
-                        column_scores[column] += add_score
+                        if math.isnan(add_score):
+                            continue
+
+                        #score += add_score
+                        if column in additional_wildcard_columns_lookup_dict.keys():
+                            realcolumn = additional_wildcard_columns_lookup_dict[column]
+                            column_scores[realcolumn] += add_score
+                        else:
+                            column_scores[column] += add_score
 
 
             #sense['absolute_score'] = score
@@ -449,7 +453,7 @@ class GoogleNgramAlgorithm:
 
             # Merkataan kaikki tyhjäksi jääneet myös cacheen ja otetaan joka tapauksessa mukaan laskentaan
             # Hyödynnetään ottamalla query string ja splitataan
-            # Tässä on virhe laskennassa jos parametri on false! jos ajaa falsen ennen trueta niin menee pilalle koska merkkautuu wildcardit nolliksi!
+            # Tässä on virhe laskennassa jos parametri on false! jos ajaa falsen ennen trueta niin menee pilalle koska merkkautuu wildcardit nolliksi! eli pakko aina ensin ajaa truena kaikki
             empty_queries = []
             all_queries = self.create_query_string(sense['query_bigrams']).split(",")
             all_queries.extend(self.create_query_string(sense['query_bigrams'],True).split(","))
