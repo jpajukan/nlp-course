@@ -372,6 +372,16 @@ class GoogleNgramAlgorithm:
                 #column_new = column_new.replace("&#39; ", "'")
                 column_new = column_new.replace("&#39;", "'")
 
+                #Crude way to solve this shit
+                if len(column_new.split()) > 3:
+                    column_new = column_new.replace(" 's", "'s")
+
+                if len(column_new.split()) > 3:
+                    column_new = column_new.replace("' s", "'s")
+
+                if len(column_new.split()) > 3:
+                    column_new = column_new.replace(" 's", "'s")
+
                 if column != column_new:
                     modifiednames[column] = column_new
                     print("Column %s will be replaced with name %s" % (column, column_new))
