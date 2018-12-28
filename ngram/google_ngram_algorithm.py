@@ -368,9 +368,39 @@ class GoogleNgramAlgorithm:
                     if '*' in column or (2 == len(column.split())):
                         column_scores[column] = 0
 
+            # jos wildcardilla on vain yksi ngrami löytynny niin tässä tullee virhe
+
+            # uusi kierros jolla otetaan loput kolminumeron kamat ja luodaan tyhjästä vildcardi grami
 
             print(column_scores.keys())
 
+            additional_wildcard_columns = []
+            additional_wildcard_columns_lookup_dict = {}
+
+            for column in sense['query_results']:
+                if (column != 'year'):
+                    if 3 == len(column.split()) and ('*' not in column):
+                        found = False
+                        column_checking_words = column.split()
+
+                        for column_ready in column_scores.keys():
+                            column_ready_words = column_ready.split()
+
+                            if (column_ready_words[0] == column_checking_words[0]) and (column_ready_words[2] == column_checking_words[2]):
+                                found = True
+                                break
+
+                        if not found:
+                            wc_ngram = column_ready_words[0] + ' * ' + column_ready_words[2]
+                            additional_wildcard_columns.append(wc_ngram)
+                            additional_wildcard_columns_lookup_dict[column] = wc_ngram
+
+
+            for awc in additional_wildcard_columns:
+                column_scores[awc] = 0
+
+
+            print(column_scores.keys())
             # Loop over rows and count valid columns
 
             for index, row in sense['query_results'].iterrows():
@@ -383,7 +413,11 @@ class GoogleNgramAlgorithm:
                         continue
 
                     #score += add_score
-                    column_scores[column] += add_score
+                    if column in additional_wildcard_columns_lookup_dict.keys():
+                        realcolumn = additional_wildcard_columns_lookup_dict[column]
+                        column_scores[realcolumn] += add_score
+                    else:
+                        column_scores[column] += add_score
 
 
             #sense['absolute_score'] = score
@@ -415,6 +449,7 @@ class GoogleNgramAlgorithm:
 
             # Merkataan kaikki tyhjäksi jääneet myös cacheen ja otetaan joka tapauksessa mukaan laskentaan
             # Hyödynnetään ottamalla query string ja splitataan
+            # Tässä on virhe laskennassa jos parametri on false! jos ajaa falsen ennen trueta niin menee pilalle koska merkkautuu wildcardit nolliksi!
             empty_queries = []
             all_queries = self.create_query_string(sense['query_bigrams']).split(",")
             all_queries.extend(self.create_query_string(sense['query_bigrams'],True).split(","))
@@ -479,7 +514,7 @@ class GoogleNgramAlgorithm:
         if '@' in params['content']:
             params['content'] = params['content'].replace('@', '=>')
 
-        retry_wait_time = 0
+        retry_wait_time = 20
 
         # TODO: Program jams if there is no internet connection and 200 response is never received
         while True:
@@ -506,7 +541,7 @@ class GoogleNgramAlgorithm:
 
             if req.status_code != 200:
                 # TODO: Rude way now, could this be improved by lookin for response retry-after header?
-                retry_wait_time += 10
+                retry_wait_time += 1
                 print("Response %s received, waiting %s seconds" % (req.status_code, retry_wait_time))
                 sleep(retry_wait_time)
 
