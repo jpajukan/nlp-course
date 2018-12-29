@@ -382,13 +382,15 @@ class GoogleNgramAlgorithm:
                 if len(column_new.split()) > 3:
                     column_new = column_new.replace(" 's", "'s")
 
+                # Dot also shits everything
+                if len(column_new.split()) > 3:
+                    column_new = column_new.replace(" .", ".")
+
                 if column != column_new:
                     modifiednames[column] = column_new
                     print("Column %s will be replaced with name %s" % (column, column_new))
 
-                # Dot also shits everything
-                if len(column_new.split()) > 3:
-                    column_new = column_new.replace(" .", ".")
+
 
             if len(modifiednames.keys()) > 0:
                 sense['query_results'].rename(columns=modifiednames, inplace=True)
