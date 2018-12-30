@@ -260,7 +260,8 @@ class GoogleNgramAlgorithm:
                 not_in_cache.append(bg)
 
             if result != None:
-                print("Ngram %s foudn in cache, dropping it from query" % (ngram))
+                #print("Ngram %s foudn in cache, dropping it from query" % (ngram))
+                pass
 
         return not_in_cache
 
@@ -386,6 +387,10 @@ class GoogleNgramAlgorithm:
                 if len(column_new.split()) > 3:
                     column_new = column_new.replace(" .", ".")
 
+                # Slash also shits everything
+                if len(column_new.split()) > 3:
+                    column_new = column_new.replace(" / ", "/")
+
                 if column != column_new:
                     modifiednames[column] = column_new
                     print("Column %s will be replaced with name %s" % (column, column_new))
@@ -408,7 +413,7 @@ class GoogleNgramAlgorithm:
 
             # uusi kierros jolla otetaan loput kolminumeron kamat ja luodaan tyhjästä vildcardi grami
 
-            print(column_scores.keys())
+            #print(column_scores.keys())
 
             additional_wildcard_columns = []
             additional_wildcard_columns_lookup_dict = {}
@@ -439,7 +444,7 @@ class GoogleNgramAlgorithm:
                 column_scores[awc] = 0
 
 
-            print(column_scores.keys())
+            #print(column_scores.keys())
             # Loop over rows and count valid columns
 
             for index, row in sense['query_results'].iterrows():
@@ -487,7 +492,7 @@ class GoogleNgramAlgorithm:
             # ota cachesta mukaan laskentaan kolumnit cachesta
 
             for ngram, value in cache_data.items():
-                print("Ngram %s taken from cache" % (ngram))
+                #print("Ngram %s taken from cache" % (ngram))
                 column_scores[ngram] = value
 
             # Merkataan kaikki tyhjäksi jääneet myös cacheen ja otetaan joka tapauksessa mukaan laskentaan
