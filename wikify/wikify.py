@@ -31,7 +31,7 @@ def wikify(corpus, word_dissamb, stopwords):
                 max_percent=percent
                 max_percent_index=i
         final_result = wikipedia.page(results[max_percent_index])
-        w.write(final_result.title + ' ' + final_result.url + ' ' + final_result.summary)
+        w.write(final_result.title + ' | ' + final_result.url + ' | ' + final_result.summary)
         print("The best match in this context was ", final_result.title, ' ', final_result.url)
 
 
