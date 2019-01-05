@@ -1,6 +1,5 @@
 import wikipedia
 import sys
-import nltk
 import difflib
 
 #### (disambiguates) wikifies the given word in regard of the given corpus
