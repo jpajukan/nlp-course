@@ -19,6 +19,7 @@ def wikify(corpus, word_dissamb, stopwords):
             try:
                 page = wikipedia.page(result)
                 links = list(set(page.summary.strip("\" '!?,:;").lower().split(" ")) - stopwords)
+                #links = page.links
                 title = page.title.lower()
             except:
                 #print("Skipped: ", result)
