@@ -5,6 +5,7 @@ import difflib
 #### (disambiguates) wikifies the given word in regard of the given corpus
 def wikify(corpus, word_dissamb, stopwords):
 
+    replacetable = dict.fromkeys(map(ord, ",\n"), None) # characters to remove
     with open("output.txt", "w") as w:
         entities = list(set(corpus.strip("\" '!?,:;").lower().split(" ")) - stopwords)
         try:
@@ -31,7 +32,7 @@ def wikify(corpus, word_dissamb, stopwords):
                 max_percent=percent
                 max_percent_index=i
         final_result = wikipedia.page(results[max_percent_index])
-        w.write(final_result.title + ' | ' + final_result.url + ' | ' + final_result.summary)
+        w.write(final_result.title.translate(replacetable) + ', ' + final_result.url + ', ' + final_result.summary.translate(replacetable))
         print("The best match in this context was ", final_result.title, ' ', final_result.url)
 
 
