@@ -1,59 +1,48 @@
-import wikipedia, sys
-import nltk
+import wikipedia
+import sys
+import difflib
 
-#### wikifies the whole input corpus
-def main():
-    usage = 'extract_links.py <infile>'
-    
-    if len(sys.argv) < 2:
+#### (disambiguates) wikifies the given word in regard of the given corpus
+def wikify(corpus, word_dissamb, stopwords):
+
+    replacetable = dict.fromkeys(map(ord, ",\n"), None) # characters to remove
+    with open("output.txt", "w") as w:
+        entities = list(set(corpus.strip("\" '!?,:;").lower().split(" ")) - stopwords)
+        try:
+            results = wikipedia.search(word_dissamb)
+        except wikipedia.exceptions.DisambiguationError as e:
+            results = e.options
+
+        max_percent=0
+        max_percent_index=0
+        for i, result in enumerate(results):
+            try:
+                page = wikipedia.page(result)
+                links = list(set(page.summary.strip("\" '!?,:;").lower().split(" ")) - stopwords)
+                title = page.title.lower()
+            except:
+                #print("Skipped: ", result)
+                continue
+
+            percent=(difflib.SequenceMatcher(a=entities, b=links).ratio() + difflib.SequenceMatcher(a=word_dissamb, b=title).ratio())*(50)
+            #percent=(difflib.SequenceMatcher(a=entities, b=links).ratio() + 0.5 * difflib.SequenceMatcher(a=word_dissamb, b=title).ratio())*(100/1.5)
+            #print("The result: ", result, round(percent, 3))
+
+            if percent > max_percent:
+                max_percent=percent
+                max_percent_index=i
+        final_result = wikipedia.page(results[max_percent_index])
+        w.write(final_result.title.translate(replacetable) + ', ' + final_result.url + ', ' + final_result.summary.translate(replacetable))
+        print("The best match in this context was ", final_result.title, ' ', final_result.url)
+
+
+if __name__ == "__main__":
+    usage = 'wikify.py <string for context> <word to disambiguate>'
+    if len(sys.argv) < 3:
         print(usage)
         sys.exit(1)
-
-
-    surface_file = sys.argv[1]
-    stopwords = set(line.strip() for line in open('stopwords.txt'))
-    #with open('stopwords.txt') as f:
-    #    for word in f.readlines():
-    #        print(word)
-    #        stopwords.update(word)
-
-    #print(stopwords)
-    #input()
-    entity_links = {}
-    entity_text = {}
-    #tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
-    with open(surface_file) as f:
-        with open("output.txt", "w") as w:
-            for entity in f.readlines():
-                #print(entity)
-                #split_entities = list(set(entity.strip().split(' ')))
-                split_entities = entity.split(" ")
-                #print(split_entities)
-                #tokens = tokenizer.tokenize(split_entities)
-                #print(type(entity))
-                #print(type(split_entities))
-                #print('getting info for: ', entity)
-                for i in split_entities:
-                    w.write(i+" ")
-                    i = i.lower().strip(".,:;'!?=")
-                    if i and i not in stopwords:
-                        print("##### TOKEN #####: ", i)
-                        try:
-                            search = wikipedia.search(i)
-                            if search:
-                                page = wikipedia.page(search[0])
-                                if page.url:
-                                    w.write('<'+page.url+'> ')
-                            # get the outgoing links from this page
-                            #entity_links[i] = page.links
-                            # get the text on this page
-                            #entity_text[i] = page.content
-                        except Exception as e:
-                            #print(e)
-                            continue
-                
-
-
-
-
-main()
+    try:
+        stopwords = set(line.strip() for line in open('stopwords.txt'))
+    except:
+        stopwords = {}
+    wikify(sys.argv[1], sys.argv[2].lower(), stopwords)
