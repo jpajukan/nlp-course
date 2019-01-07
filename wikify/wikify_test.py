@@ -9,7 +9,7 @@ def main():
         r.write("corpus" + "," + "word to dissambiguate" + "," + "result" + "\n")
     with open("results_for_validation.csv", "a") as r:
         r.write("corpus" + "," + "word to dissambiguate" + "," + "result" + "\n")
-    with open("../testing/combined/testfile_all_blocks_combined_and_cleaned.csv", "r") as f:
+    with open("../ngram/test_data/testfile_for_ngram.csv", "r") as f:
         rubbish = f.readline() #read the first line of the data to discard header
         for line in f.readlines():
             corpus,word = line.strip("\n").split(",")
