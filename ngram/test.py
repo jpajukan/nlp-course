@@ -27,8 +27,12 @@ def main():
                 print(wordAndSentence)
                 csv_writer.writerow(wordAndSentence)
 
-                ngra = GoogleNgramAlgorithm(row[1], row[0], 2, 2)
-
+                #ngra = GoogleNgramAlgorithm(row[1], row[0], 2, 2)
+                #ngra = GoogleNgramAlgorithm(row[1], row[0], 3, 2, use_wildcards=True)
+                #ngra = GoogleNgramAlgorithm(row[1], row[0], 4, 2, use_wildcards=True)
+                #ngra = GoogleNgramAlgorithm(row[1], row[0], 4, 3, use_wildcards=True)
+                #ngra = GoogleNgramAlgorithm(row[1], row[0], 10, 12, use_wildcards=True)
+                ngra = GoogleNgramAlgorithm(row[1], row[0], 12, 12, use_wildcards=True)
                 ngra.prepare()
                 ngra.query_google_ngram()
 
