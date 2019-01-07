@@ -1,10 +1,8 @@
 # Natural Language Processing and Text Mining - Coursework Project
 
-## WSD by Wikification and Google Books Ngram
+## Word sense disambiguation by Wikification and Google Books Ngram
 
-TODO This is project...
-
-This repository contains wikification in folder for Wikification word disambiguation and Google Books Ngram Viewer WSD Algorithm code and test are in folder ngram. Final course report in PDF format in root folder.
+This repository contains wikification in folder for Wikification word disambiguation and Google Books Ngram WSD Algorithm code and test are in folder ngram. Final course report in PDF format in root folder.
 
 **NOTICE:** This project does not have any official connection to Google or Wikipedia, other than using tools they provide.
 
