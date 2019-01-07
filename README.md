@@ -4,7 +4,7 @@
 
 TODO This is project...
 
-TODO This repository contains wikification in folder ... Google Books Ngram Viewer WSD Algorithm in folder ... final course report in PDF format in root folder.
+This repository contains wikification in folder for Wikification word disambiguation and Google Books Ngram Viewer WSD Algorithm code and test are in folder ngram. Final course report in PDF format in root folder.
 
 **NOTICE:** This project does not have any official connection to Google or Wikipedia, other than using tools they provide.
 
