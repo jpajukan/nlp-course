@@ -19,10 +19,10 @@ TODO This repository contains wikification in folder ... Google Books Ngram View
 
 TODO Pari lausetta yleistä settiä
 
-Ajo ohjeet
+TODO Ajo ohjeet kansiossa wiki
 
 ## Google Books Ngram WSD Algorithm
 
 Word sense disambiguation algorithm utilizing Google Books Ngram Viewer was created during this project. Algorithm utilizes Lesk-styled calculations to compare each possible word sense to its context while utilizing co-occurence information retreived from Google Books Ngram Viewer as a scoring system for each pair of words.
 
-Running instructions can be found TODO
+Running instructions and other data can be found at folder ngram.
