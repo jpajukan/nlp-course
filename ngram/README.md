@@ -12,8 +12,6 @@ Test file, test data cache database and final results are located in test_data f
 * Final results are in folder final_results. The folder contains 242 different test runs, each performed with different parameters.
 * testfile_for_ngram.csv is test package containing all (over 90) tests in csv format. This file is inputted as parameter to test.py to make it run testing automatically.
 
-Figures calculated from that data are contained in figures folder. Figures are divided to 4 folders, each representing content of test_data/final_results in different way.
-
 ## Figures 
 This folder includes accuracy and relative score figures from the test data.
 It has same set of graphs twice, one related to context and the other to sense
