@@ -17,9 +17,9 @@ TODO This repository contains wikification in folder ... Google Books Ngram View
 
 ## Wikification
 
-TODO Pari lausetta yleistä settiä
+An algorithm for Python that uses Wikipedia API to disambiguate words in their given corpus. It compares the 10 most relevant search results of a word with the given corpus to find the most probable definition for given word.
 
-TODO Ajo ohjeet kansiossa wiki
+Running instructions and other data can be found in the folder wikify.
 
 ## Google Books Ngram WSD Algorithm
 
