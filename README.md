@@ -4,16 +4,16 @@
 
 TODO This is project...
 
-TODO This repository contains wikification in folder ... Google Books Ngram Viewer WSD Algorithm
+TODO This repository contains wikification in folder ... Google Books Ngram Viewer WSD Algorithm in folder ... final course report in PDF format in root folder.
 
 **NOTICE:** This project does not have any official connection to Google or Wikipedia, other than using tools they provide.
 
 ### Authors
-Jukka Pajukangas
-Joel Lehtela
-Lauri Haverinen
-Mikko Paasimaa
-Heikki Kaarlela
+* Jukka Pajukangas
+* Joel Lehtela
+* Lauri Haverinen
+* Mikko Paasimaa
+* Heikki Kaarlela
 
 ## Wikification
 
