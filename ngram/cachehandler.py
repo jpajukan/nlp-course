@@ -1,6 +1,6 @@
 import sqlite3
 
-CACHE_DB_LOCATION = "testing/combined/cache_combined.sqlite3"
+CACHE_DB_LOCATION = "test_data/cache_combined.sqlite3"
 
 def create():
     # If db does not exist then create it

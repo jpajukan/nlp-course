@@ -2,8 +2,6 @@ from google_ngram_algorithm import GoogleNgramAlgorithm
 import sys
 import csv
 
-
-
 def main():
 
     usage = 'test.py <csv input file> <csv output file>'
@@ -38,8 +36,6 @@ def main():
 
                 ngra.analyze()
 
-                #ngra.print_results()
-                #print(ngra.get_all_results())
                 results = ngra.get_all_results()
                 print(results)
                 for outputRow in results:
@@ -49,25 +45,6 @@ def main():
             line_count += 1
 
         print(f'Processed {line_count} lines.')
-
-    # Not very good test word stuff. Try different ones
-
-    #sentence = "I like to tie knots in rope"
-    #target_word = "tie"
-
-    #sentence = "I loaned money from bank to buy new apartment"
-    #target_word = "bank"
-
-
-    # Algorithm seems to be working nicely with this one (but might just be coincidence)
-    #sentence = "We went to see the famous play at the theater"
-    #target_word = "play"
-
-    # Not producing good with this one
-    #sentence = "Most successful football team play at the stadium tonight"
-    #target_word = "play"
-
-    #ngra = GoogleNgramAlgorithm(target_word, sentence, 6, 2)
 
 
 if __name__ == '__main__':
